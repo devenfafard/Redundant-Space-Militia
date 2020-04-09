@@ -340,11 +340,14 @@ public class BETA_SETTINGS{
         #endregion
     }
 
-    private void Update()
+    
+        private void Update()
     {
-        #region Look Settings - Update
 
-            if(enableCameraMovement){
+
+    #region Look Settings - Update
+
+    if (enableCameraMovement){
             float mouseYInput;
             float mouseXInput;
             float camFOV = playerCamera.fieldOfView;
