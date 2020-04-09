@@ -11,6 +11,8 @@ public class grabObject : MonoBehaviour
     bool beingCarried = false;
     private bool colliding = false;
 
+    private RaycastHit _hit = new RaycastHit();
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,9 +27,10 @@ public class grabObject : MonoBehaviour
     {
 
         float dist = Vector3.Distance(gameObject.transform.position, player.position);
+        Physics.Raycast(playerCam.position, playerCam.forward, out _hit, 10);
 
-        if (dist <= 2.5f)
-            canBeGrabbed = true;
+        if (dist <= 2.5f && _hit.transform.gameObject == gameObject)
+                canBeGrabbed = true;
 
         else
             canBeGrabbed = false;
