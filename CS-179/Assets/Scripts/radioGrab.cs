@@ -32,7 +32,7 @@ public class radioGrab : MonoBehaviour
         audio = GetComponent<AudioSource>();
 
         if (dist <= 2.5f && Physics.Raycast(playerCam.position, playerCam.forward, out _hit, 500))
-            if (_hit.transform.gameObject == gameObject)
+            if (_hit.collider.gameObject == gameObject)
                 canBeGrabbed = true;
 
             else

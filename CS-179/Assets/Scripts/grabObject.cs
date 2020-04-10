@@ -26,9 +26,9 @@ public class grabObject : MonoBehaviour
     void Update()
     {
 
-        float dist = Vector3.Distance(gameObject.transform.position, player.position);
+        float dist = Vector3.Distance(gameObject.transform.position, playerCam.position);
 
-        if (dist <= 2.5f && Physics.Raycast(playerCam.position, playerCam.forward, out _hit, 500))
+        if (dist <= 3.5f && Physics.Raycast(playerCam.position, playerCam.forward, out _hit, 7))
             if (_hit.transform.gameObject == gameObject)
                 canBeGrabbed = true;
 
