@@ -48,6 +48,8 @@ public class radioGrab : MonoBehaviour
 
             audio.Play();
 
+            canBeGrabbed = false;
+
         }
 
         if (beingCarried)

@@ -52,8 +52,9 @@ public class flashlightAttach : MonoBehaviour
             Vector3 temp = new Vector3(0.157f, -0.136f, 0.281f);
             Vector3 rotation = new Vector3(-43.82f, 263.508f, .776f);
             transform.parent = playerCam;
-            transform.position = playerCam.position + temp;
-            //transform.rotation.SetLookRotation(playerCam.rotation + rotation);
+            transform.localPosition = new Vector3(0.157f,-0.136f,0.281f);
+            transform.localRotation = Quaternion.Euler(new Vector3(0, -90f, 8f));
+            
         }
 
     }

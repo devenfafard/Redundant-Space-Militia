@@ -19,7 +19,7 @@ public class grabObject : MonoBehaviour
     {
 
 
-        
+
     }
 
     // Update is called once per frame
@@ -28,12 +28,12 @@ public class grabObject : MonoBehaviour
 
         float dist = Vector3.Distance(gameObject.transform.position, playerCam.position);
 
-        if (dist <= 3.5f && Physics.Raycast(playerCam.position, playerCam.forward, out _hit, 7))
+        if (dist <= 3f && Physics.Raycast(playerCam.position, playerCam.forward, out _hit, 10))
             if (_hit.transform.gameObject == gameObject)
                 canBeGrabbed = true;
 
-        else
-            canBeGrabbed = false;
+            else
+                canBeGrabbed = false;
 
 
         if (canBeGrabbed && Input.GetButtonDown("Use"))
@@ -42,6 +42,7 @@ public class grabObject : MonoBehaviour
             GetComponent<Rigidbody>().isKinematic = true;
             transform.parent = playerCam;
             beingCarried = true;
+            canBeGrabbed = false;
 
         }
 
