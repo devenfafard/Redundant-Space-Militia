@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 950, y: 544}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -44,8 +44,8 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 681, y: 494}
-  m_MaxSize: {x: 14002, y: 14044}
+  m_MinSize: {x: 683, y: 494}
+  m_MaxSize: {x: 14004, y: 14044}
   vertical: 0
   controlID: 62
 --- !u!114 &3
@@ -149,7 +149,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 950, y: 544}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &7
 MonoBehaviour:
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 494}
   m_MaxSize: {x: 10002, y: 14044}
   vertical: 1
-  controlID: 13
+  controlID: 86
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 222}
   m_MaxSize: {x: 8006, y: 4022}
   vertical: 0
-  controlID: 14
+  controlID: 87
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -336,20 +336,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/test fps prefab for testing purposes until we have our own
+    - Assets/Water Puzzle Room/Scene
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/test fps prefab for testing purposes until we have our own
+  - Assets/Water Puzzle Room/Scene
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Michael\Documents\temp repo\Redundant-Space-Militia\CS-179
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 71}
-    m_SelectedIDs: 8a2a0000
-    m_LastClickedID: 10890
-    m_ExpandedIDs: 00000000fe2800005a29000000ca9a3b
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: dc2e0000
+    m_LastClickedID: 11996
+    m_ExpandedIDs: 00000000fe280000d62e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -496,10 +496,10 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 49}
-      m_SelectedIDs: 18fbffff
-      m_LastClickedID: -1256
-      m_ExpandedIDs: a0ecffff08fbffff18fbffff7cfbffff8efbffff
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: b2f9ffff8efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -559,9 +559,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 6.9130573, y: 6.0623474, z: 7.8213234}
+    m_Target: {x: 2.365448, y: 2.727129, z: 0.8889656}
     speed: 2
-    m_Value: {x: 6.9130573, y: 6.0623474, z: 7.8213234}
+    m_Value: {x: 2.365448, y: 2.727129, z: 0.8889656}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 2
@@ -590,13 +590,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.20079964, y: 0.791555, z: -0.46384066, w: -0.34388798}
+    m_Target: {x: -0.07395372, y: 0.8742633, z: -0.14203888, w: -0.45859164}
     speed: 2
-    m_Value: {x: -0.18897176, y: 0.80359924, z: -0.45324394, w: -0.3362853}
+    m_Value: {x: -0.073943116, y: 0.87413794, z: -0.14201851, w: -0.4585259}
   m_Size:
-    m_Target: 16.361795
+    m_Target: 16.253199
     speed: 2
-    m_Value: 15.65722
+    m_Value: 17.019056
   m_Ortho:
     m_Target: 0
     speed: 2
