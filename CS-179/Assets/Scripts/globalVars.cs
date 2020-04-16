@@ -5,6 +5,6 @@ using UnityEngine;
 public static class globalVars
 {
 
-    public static bool carryingObject;
+    public static float gravMultiplier = .5f;
 
 }

@@ -44,7 +44,6 @@ public class grabObject : MonoBehaviour
             beingCarried = true;
             canBeGrabbed = false;
 
-            globalVars.carryingObject = true;
 
         }
 
@@ -59,7 +58,6 @@ public class grabObject : MonoBehaviour
                 beingCarried = false;
                 GetComponent<Rigidbody>().AddForce(playerCam.forward * strength);
 
-                globalVars.carryingObject = false;
 
             }
             else if (Input.GetMouseButtonDown(1))
@@ -68,8 +66,6 @@ public class grabObject : MonoBehaviour
                 GetComponent<Rigidbody>().isKinematic = false;
                 transform.parent = null;
                 beingCarried = false;
-
-                globalVars.carryingObject = false;
 
             }
 

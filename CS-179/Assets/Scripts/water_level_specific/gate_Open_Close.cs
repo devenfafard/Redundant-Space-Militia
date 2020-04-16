@@ -29,12 +29,10 @@ public class gate_Open_Close : MonoBehaviour
     {
         //canBePressed = false;
 
-        float moveTime = (closeDestination.position - transform.position).magnitude;
-        for (float t = 0f; t < moveTime; t += Time.deltaTime)
+        float moveTime = (closeDestination.position - openDestination.position).magnitude;
+        for (float t = 0f; transform.position != closeDestination.position; t += Time.deltaTime)
         {
 
-            if (_open)
-                yield break;
 
             transform.position = Vector3.Lerp(transform.position, closeDestination.position, t / moveTime * downSpeed);
             yield return 0;
@@ -49,8 +47,8 @@ public class gate_Open_Close : MonoBehaviour
 
         downSpeed = tempDownSpeed;
 
-        float moveTime = (openDestination.position - transform.position).magnitude;
-        for (float t = 0f; t < moveTime; t += Time.deltaTime)
+        float moveTime = (openDestination.position - closeDestination.position).magnitude;
+        for (float t = 0f; transform.position != openDestination.position; t += Time.deltaTime)
         {
            
             transform.position = Vector3.Lerp(transform.position, openDestination.position, t / moveTime * upSpeed);

@@ -44,13 +44,13 @@ public class boxStay : MonoBehaviour
             if (canBeGrabbed && Input.GetButtonDown("Use"))
             {
 
-                //GetComponent<Rigidbody>().isKinematic = true;
+                GetComponent<Rigidbody>().isKinematic = true;
                // GetComponent<Rigidbody>().useGravity = false;
                 transform.parent = playerCam;
                 beingCarried = true;
                 canBeGrabbed = false;
 
-                globalVars.carryingObject = true;
+                
 
             }
 
@@ -66,7 +66,7 @@ public class boxStay : MonoBehaviour
                     beingCarried = false;
                     GetComponent<Rigidbody>().AddForce(playerCam.forward * strength);
 
-                    globalVars.carryingObject = false;
+                    
 
                 }
                 else if (Input.GetMouseButtonDown(1))
@@ -77,7 +77,7 @@ public class boxStay : MonoBehaviour
                     transform.parent = null;
                     beingCarried = false;
 
-                    globalVars.carryingObject = false;
+                   
 
                 }
 
