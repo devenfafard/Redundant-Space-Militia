@@ -15,7 +15,7 @@ public class buttonpress : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     IEnumerator Close()
@@ -43,7 +43,7 @@ public class buttonpress : MonoBehaviour
         if (dist <= 3f && Physics.Raycast(playerCam.position, playerCam.forward, out _hit, 10))
             if (_hit.transform.gameObject == button.gameObject && canBePressed && Input.GetButtonDown("Use"))
                 StartCoroutine("Close");
-            
+
 
 
 

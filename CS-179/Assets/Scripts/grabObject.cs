@@ -75,14 +75,6 @@ public class grabObject : MonoBehaviour
 
 
         }
-        if (!globalVars.carryingObject)
-        {
-
-            GetComponent<Rigidbody>().isKinematic = false;
-            transform.parent = null;
-            beingCarried = false;
-
-        }
     }
 
     void OnCollisionEnter(Collision collision)
