@@ -904,7 +904,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: f4025f863d5379f45a3f07955824b707,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.467
+      value: -9.31
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: f4025f863d5379f45a3f07955824b707,
         type: 3}
@@ -1574,6 +1574,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: playerController
       objectReference: {fileID: 0}
+    - target: {fileID: 1264833946912854, guid: 2e62f5703e5f8d2488a5e1bc8433be41, type: 3}
+      propertyPath: m_Name
+      value: playerCamera
+      objectReference: {fileID: 0}
     - target: {fileID: 4448068258976056, guid: 2e62f5703e5f8d2488a5e1bc8433be41, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.76
@@ -1637,10 +1641,6 @@ PrefabInstance:
         type: 3}
       propertyPath: Volume
       value: 6.94
-      objectReference: {fileID: 0}
-    - target: {fileID: 1264833946912854, guid: 2e62f5703e5f8d2488a5e1bc8433be41, type: 3}
-      propertyPath: m_Name
-      value: playerCamera
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e62f5703e5f8d2488a5e1bc8433be41, type: 3}
@@ -4100,8 +4100,8 @@ Light:
   serializedVersion: 9
   m_Type: 0
   m_Color: {r: 0.9811321, g: 0.9668625, b: 0.80989677, a: 1}
-  m_Intensity: 2.5
-  m_Range: 20
+  m_Intensity: 2.65
+  m_Range: 30
   m_SpotAngle: 43.7
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
