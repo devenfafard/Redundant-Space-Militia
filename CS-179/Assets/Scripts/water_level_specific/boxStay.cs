@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class boxStay : MonoBehaviour
 {
-    public Transform player;
-    public Transform playerCam;
+    GameObject player; 
+    GameObject playerCam;
     public float strength = 10f;
     bool canBeGrabbed = false;
     bool beingCarried = false;
@@ -19,8 +19,8 @@ public class boxStay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-
+        player = GameObject.Find("playerController");
+        playerCam = GameObject.Find("playerCamera");
 
     }
 
@@ -31,9 +31,9 @@ public class boxStay : MonoBehaviour
         if (!colliding)
         {
 
-            float dist = Vector3.Distance(gameObject.transform.position, playerCam.position);
+            float dist = Vector3.Distance(gameObject.transform.position, playerCam.transform.position);
 
-            if (dist <= 3f && Physics.Raycast(playerCam.position, playerCam.forward, out _hit, 10))
+            if (dist <= 3f && Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out _hit, 10))
                 if (_hit.transform.gameObject == gameObject)
                     canBeGrabbed = true;
 
@@ -46,7 +46,7 @@ public class boxStay : MonoBehaviour
 
                 GetComponent<Rigidbody>().isKinematic = true;
                // GetComponent<Rigidbody>().useGravity = false;
-                transform.parent = playerCam;
+                transform.parent = playerCam.transform;
                 beingCarried = true;
                 canBeGrabbed = false;
 
@@ -64,7 +64,7 @@ public class boxStay : MonoBehaviour
                  //   GetComponent<Rigidbody>().useGravity = true;
                     transform.parent = null;
                     beingCarried = false;
-                    GetComponent<Rigidbody>().AddForce(playerCam.forward * strength);
+                    GetComponent<Rigidbody>().AddForce(playerCam.transform.forward * strength);
 
                     
 

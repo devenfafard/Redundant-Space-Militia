@@ -6,8 +6,8 @@ public class gate_Open_Close : MonoBehaviour
 {
     public GameObject button;
     public GameObject cubeObstruction; //very naive and inefficient solution
-    public Transform player;
-    public Transform playerCam;
+    GameObject player;
+    GameObject playerCam;
     RaycastHit _hit;
     bool canBePressed = true;
     public Transform closeDestination, openDestination;
@@ -23,6 +23,8 @@ public class gate_Open_Close : MonoBehaviour
     void Start()
     {
         tempDownSpeed = downSpeed;
+        player = GameObject.Find("playerController");
+        playerCam = GameObject.Find("playerCamera");
     }
 
     IEnumerator Close()
@@ -63,10 +65,10 @@ public class gate_Open_Close : MonoBehaviour
     void Update()
     {
 
-        float dist = Vector3.Distance(button.transform.position, playerCam.position);
+        float dist = Vector3.Distance(button.transform.position, playerCam.transform.position);
 
 
-        if (dist <= 3f && Physics.Raycast(playerCam.position, playerCam.forward, out _hit, 10))
+        if (dist <= 3f && Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out _hit, 10))
             if (_hit.transform.gameObject == button.gameObject && Input.GetButtonDown("Use") && _open)
             {
                 _open = false;
