@@ -4,13 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Test Room
-  - Ground
+  - Fire
+  - Arrow
   - Axe
   - Crosshair
-  - Look View
   - FirstPerson Camera
-  - Arrow
+  - Look View
   - Spear
   layers:
   - Default
@@ -21,10 +20,10 @@ TagManager:
   - UI
   - 
   - 
-  - FirstPerson
-  - Ground
-  - Enemy
-  - Player
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

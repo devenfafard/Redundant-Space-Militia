@@ -4545,7 +4545,7 @@ GameObject:
   - component: {fileID: 1957421075}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13879,12 +13879,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 7bb41d2992f49e94397426f19ad90e47, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: 934ad6d2ce3118b40a123e18555751d8,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 7bb41d2992f49e94397426f19ad90e47, type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 934ad6d2ce3118b40a123e18555751d8, type: 3}
 --- !u!4 &7919795216025914592 stripped
