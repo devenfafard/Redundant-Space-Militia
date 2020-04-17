@@ -4,19 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-<<<<<<< HEAD
-  - Test Room
-  - Ground
-  - Axe
-  - Crosshair
-  - Look View
-  - FirstPerson Camera
-  - Arrow
-  - Spear
-=======
   - Equipment
   - Environment
->>>>>>> origin/michael_branch
   layers:
   - Default
   - TransparentFX
@@ -26,10 +15,10 @@ TagManager:
   - UI
   - 
   - 
-  - FirstPerson
-  - Ground
-  - Enemy
-  - Player
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
