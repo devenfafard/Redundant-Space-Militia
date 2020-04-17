@@ -6,10 +6,10 @@ public class lowPassFilter : MonoBehaviour
 {
 
 
+
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -21,7 +21,7 @@ public class lowPassFilter : MonoBehaviour
     void OnTriggerEnter(Collider collider)
     {
 
-        if (collider.tag == "Environment")
+        if (collider.gameObject == GameObject.Find("playerCamera"))
         {
             GetComponent<AudioLowPassFilter>().cutoffFrequency = 250;
             GetComponent<AudioLowPassFilter>().lowpassResonanceQ = 2;
@@ -31,10 +31,10 @@ public class lowPassFilter : MonoBehaviour
     void OnTriggerExit(Collider collider)
     {
 
-        if (collider.tag == "Environment")
+        if (collider.gameObject == GameObject.Find("playerCamera"))
         {
             GetComponent<AudioLowPassFilter>().cutoffFrequency = 22000;
-            GetComponent<AudioLowPassFilter>().lowpassResonanceQ = 1;
+            gameObject.GetComponent<AudioLowPassFilter>().lowpassResonanceQ = 1;
         }
 
         }

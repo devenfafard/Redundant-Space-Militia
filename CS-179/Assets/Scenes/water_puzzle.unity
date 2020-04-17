@@ -132,6 +132,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: water puzzle room
       objectReference: {fileID: 0}
+    - target: {fileID: -6166381988907012391, guid: f60abc4d313623f4f908cc95b586beca,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.31
+      objectReference: {fileID: 0}
+    - target: {fileID: -6166381988907012391, guid: f60abc4d313623f4f908cc95b586beca,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: -6166381988907012391, guid: f60abc4d313623f4f908cc95b586beca,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.836
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: f60abc4d313623f4f908cc95b586beca,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -192,15 +207,15 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 1.4811
       objectReference: {fileID: 0}
-    - target: {fileID: 8833720299871980622, guid: f60abc4d313623f4f908cc95b586beca,
+    - target: {fileID: -3151554163418203837, guid: f60abc4d313623f4f908cc95b586beca,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.76
+      value: 5.79
       objectReference: {fileID: 0}
-    - target: {fileID: 8833720299871980622, guid: f60abc4d313623f4f908cc95b586beca,
+    - target: {fileID: -3151554163418203837, guid: f60abc4d313623f4f908cc95b586beca,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.43
+      value: -23.2
       objectReference: {fileID: 0}
     - target: {fileID: 2498326036907817780, guid: f60abc4d313623f4f908cc95b586beca,
         type: 3}
@@ -212,30 +227,15 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -19.4
       objectReference: {fileID: 0}
-    - target: {fileID: -6166381988907012391, guid: f60abc4d313623f4f908cc95b586beca,
+    - target: {fileID: 8833720299871980622, guid: f60abc4d313623f4f908cc95b586beca,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.31
+      value: 5.76
       objectReference: {fileID: 0}
-    - target: {fileID: -6166381988907012391, guid: f60abc4d313623f4f908cc95b586beca,
+    - target: {fileID: 8833720299871980622, guid: f60abc4d313623f4f908cc95b586beca,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: -6166381988907012391, guid: f60abc4d313623f4f908cc95b586beca,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.836
-      objectReference: {fileID: 0}
-    - target: {fileID: -3151554163418203837, guid: f60abc4d313623f4f908cc95b586beca,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5.79
-      objectReference: {fileID: 0}
-    - target: {fileID: -3151554163418203837, guid: f60abc4d313623f4f908cc95b586beca,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -23.2
+      value: -12.43
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f60abc4d313623f4f908cc95b586beca, type: 3}
@@ -2274,8 +2274,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1570335340}
-  m_LocalRotation: {x: -0.5645102, y: 0.082247525, z: 0.05686805, w: 0.8193471}
-  m_LocalPosition: {x: -22.707834, y: -11.880256, z: 6.9608808}
+  m_LocalRotation: {x: -0.24835722, y: -0.31319594, z: -0.08557527, w: 0.9126357}
+  m_LocalPosition: {x: -42.67459, y: -5.337983, z: 6.039673}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2890,7 +2890,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2096404301}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2cb9bc2041a21604fabdfcf3667ab3b6, type: 3}
   m_Name: 
