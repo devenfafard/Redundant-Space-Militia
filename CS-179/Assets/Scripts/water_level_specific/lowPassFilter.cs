@@ -21,7 +21,7 @@ public class lowPassFilter : MonoBehaviour
     void OnTriggerEnter(Collider collider)
     {
 
-        if (collider.gameObject == GameObject.Find("playerCamera"))
+        if (collider.tag == ("Environment"))
         {
             GetComponent<AudioLowPassFilter>().cutoffFrequency = 250;
             GetComponent<AudioLowPassFilter>().lowpassResonanceQ = 2;
@@ -31,7 +31,7 @@ public class lowPassFilter : MonoBehaviour
     void OnTriggerExit(Collider collider)
     {
 
-        if (collider.gameObject == GameObject.Find("playerCamera"))
+        if (collider.tag == ("Environment"))
         {
             GetComponent<AudioLowPassFilter>().cutoffFrequency = 22000;
             gameObject.GetComponent<AudioLowPassFilter>().lowpassResonanceQ = 1;
