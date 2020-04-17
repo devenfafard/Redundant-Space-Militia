@@ -4,6 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
   - Test Room
   - Ground
   - Axe
@@ -12,6 +13,10 @@ TagManager:
   - FirstPerson Camera
   - Arrow
   - Spear
+=======
+  - Equipment
+  - Environment
+>>>>>>> origin/michael_branch
   layers:
   - Default
   - TransparentFX
