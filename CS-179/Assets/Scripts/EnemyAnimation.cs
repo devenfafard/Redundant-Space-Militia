@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimationTags
+public class EnemyAnimationTags
 {
     public const string WALK_PARAM = "Walk";
     public const string RUN_PARAM = "Run";
@@ -27,16 +27,16 @@ public class EnemyAnimation : MonoBehaviour
     // Update is called once per frame
     public void Walk(bool walk)
     {
-        Anima.SetBool(AnimationTags.WALK_PARAM, walk);
+        Anima.SetBool(EnemyAnimationTags.WALK_PARAM, walk);
     }
 
     public void Run(bool run)
     {
-        Anima.SetBool(AnimationTags.WALK_PARAM, run);
+        Anima.SetBool(EnemyAnimationTags.WALK_PARAM, run);
     }
 
     public void Attack()
     {
-        Anima.SetTrigger(AnimationTags.ATTACK_PARAM);
+        Anima.SetTrigger(EnemyAnimationTags.ATTACK_PARAM);
     }
 }

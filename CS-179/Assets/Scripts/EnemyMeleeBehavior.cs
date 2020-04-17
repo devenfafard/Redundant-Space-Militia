@@ -176,7 +176,7 @@ public class EnemyMeleeBehavior : MonoBehaviour
     }
 
 
-        void NewRandomDestination()
+    void NewRandomDestination()
     {
         float rand_Radius = Random.Range(patrol_radius_min, patrol_radius_max);
 
