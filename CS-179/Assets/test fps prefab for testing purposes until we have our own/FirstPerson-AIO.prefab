@@ -359,13 +359,6 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     fovStart: 0
-  advanced:
-    gravityMultiplier: 1
-    zeroFrictionMaterial: {fileID: 0}
-    highFrictionMaterial: {fileID: 0}
-    _maxSlopeAngle: 70
-    maxStepHeight: 0.2
-    lastKnownSlopeAngle: 0
   isCrouching: 0
   fps_Rigidbody: {fileID: 0}
   useHeadbob: 1
@@ -386,33 +379,14 @@ MonoBehaviour:
   fsmode: 1
   dynamicFootstep:
     materialMode: 0
-    woodPhysMat:
-    - {fileID: 0}
-    metalAndGlassPhysMat:
-    - {fileID: 0}
-    grassPhysMat:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    dirtAndGravelPhysMat:
-    - {fileID: 0}
-    rockAndConcretePhysMat:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    mudPhysMat:
-    - {fileID: 0}
-    customPhysMat:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    woodMat: []
-    metalAndGlassMat: []
-    grassMat: []
-    dirtAndGravelMat: []
-    rockAndConcreteMat: []
-    mudMat: []
-    customMat: []
+    woodPhysMat: {fileID: 0}
+    metalAndGlassPhysMat: {fileID: 0}
+    grassPhysMat: {fileID: 13400000, guid: 48bbde3049f29b247a56af17d2b0381f, type: 2}
+    dirtAndGravelPhysMat: {fileID: 0}
+    rockAndConcretePhysMat: {fileID: 13400000, guid: 8b2bc5d65b8a23249ac65e6a71b72204,
+      type: 2}
+    mudPhysMat: {fileID: 0}
+    customPhysMat: {fileID: 13400000, guid: 607312263e6edad4293a3fd7bb6602cf, type: 2}
     currentClipSet: []
     woodClipSet: []
     metalAndGlassClipSet: []
