@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-enum EnemyState{ PATROL, FOLLOW, ATTACK}
+public enum EnemyState{ PATROL, FOLLOW, ATTACK}
 
 public class EnemyMeleeBehavior : MonoBehaviour
 {
@@ -31,6 +31,7 @@ public class EnemyMeleeBehavior : MonoBehaviour
     public float wait_before_attack = 2f;
 
     private Transform target;
+    public GameObject attack_point;
 
     private void Awake()
     {
@@ -188,6 +189,24 @@ public class EnemyMeleeBehavior : MonoBehaviour
         NavMesh.SamplePosition(rand_direction, out navInside, rand_Radius, -1);
 
         navAgent.SetDestination(navInside.position);
+    }
+
+    void turnOnAttackPoint()
+    {
+        attack_point.SetActive(true);
+    }
+
+    void turnOffAttackPoint()
+    {
+        if (attack_point.activeInHierarchy)
+        {
+            attack_point.SetActive(false);
+        }
+    }
+
+    public EnemyState Enemy_State
+    {
+        get; set;
     }
 
 

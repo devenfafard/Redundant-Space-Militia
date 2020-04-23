@@ -9,6 +9,7 @@ public class EnemyAnimationTags
     public const string ATTACK_PARAM = "Attack";
     public const string DEAD_PARAM = "Dead";
     public const string SHOOT_PARAM = "Shoot";
+    public const string DEAD_TRIGGER = "Dead";
 
 }
 
@@ -38,5 +39,10 @@ public class EnemyAnimation : MonoBehaviour
     public void Attack()
     {
         Anima.SetTrigger(EnemyAnimationTags.ATTACK_PARAM);
+    }
+
+    public void Dead()
+    {
+        Anima.SetTrigger(EnemyAnimationTags.DEAD_TRIGGER);
     }
 }

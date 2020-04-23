@@ -11,6 +11,7 @@ TagManager:
   - FirstPerson Camera
   - Look View
   - Spear
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -20,9 +21,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Environment/Terrain
+  - Enemy
+  - Player
   - 
   - 
   - 
