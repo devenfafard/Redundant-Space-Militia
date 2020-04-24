@@ -10980,6 +10980,7 @@ GameObject:
   - component: {fileID: 3771131140726607426}
   - component: {fileID: 3771131140726607549}
   - component: {fileID: 2073846939329933058}
+  - component: {fileID: 1905153278}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -11143,6 +11144,20 @@ MonoBehaviour:
   health: 100
   is_player: 1
   is_alien: 0
+--- !u!136 &1905153278
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3771131141091654448}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 2
+  m_Height: 1.8
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &3771131141093653068
 GameObject:
   m_ObjectHideFlags: 0

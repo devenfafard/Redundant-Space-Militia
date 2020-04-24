@@ -32,7 +32,7 @@ public class EnemyMeleeBehavior : MonoBehaviour
 
     private Transform target;
     public GameObject attack_point;
-    private GameObject enemy;
+    private GameObject gun;
 
     [SerializeField]
     private float enemy_damage = 5f;
@@ -41,7 +41,7 @@ public class EnemyMeleeBehavior : MonoBehaviour
     {
         enemy_Anima = GetComponent<EnemyAnimation>();
         navAgent = GetComponent<NavMeshAgent>();
-        enemy = GameObject.FindWithTag("Enemy");
+        gun = GameObject.FindWithTag("AlienGun");
         target = GameObject.FindWithTag("Player").transform;
     }
 
@@ -170,7 +170,7 @@ public class EnemyMeleeBehavior : MonoBehaviour
 
             RaycastHit hit;
 
-            if (Physics.Raycast(transform.position, transform.forward, out hit))
+            if (Physics.Raycast(gun.transform.position, gun.transform.forward, out hit))
             {
 
                 //print("RayTracing");
