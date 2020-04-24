@@ -12,6 +12,8 @@ TagManager:
   - Look View
   - Spear
   - Enemy
+  - AlienGun
+  - AlienCamera
   layers:
   - Default
   - TransparentFX
