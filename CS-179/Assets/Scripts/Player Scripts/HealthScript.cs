@@ -32,6 +32,15 @@ public class HealthScript : MonoBehaviour
        
     }
 
+<<<<<<< Updated upstream
+=======
+    void Start()
+    {
+        gate = GameObject.FindGameObjectWithTag("Canyon Gate");
+    }
+
+
+>>>>>>> Stashed changes
     public void ApplyDamage(float damage)
     {
 
