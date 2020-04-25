@@ -2,13 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OpenGate : MonoBehaviour
+public class FirstGate : MonoBehaviour
 {
-   public GameObject hinge1;
+    
+    public GameObject hinge1;
 
     public GameObject hinge2;
 
-   public GameObject trigger;
+    public GameObject trigger;
+
+    private GameObject chicken_coup;
+
+    private bool complete = false;
 
     Animator left_door;
     Animator right_door;
@@ -17,11 +22,16 @@ public class OpenGate : MonoBehaviour
     {
         left_door = hinge1.GetComponent<Animator>();
         right_door = hinge2.GetComponent<Animator>();
+        chicken_coup = GameObject.FindGameObjectWithTag("Chicken Coup");
     }
 
+    void Update()
+    {
+        complete = chicken_coup.GetComponent<ChickenCoup>().get_Checkpoint_1_Status();
+    }
     void OnTriggerEnter(Collider coll)
     {
-        if (coll.gameObject.tag == "Player")
+        if (coll.gameObject.tag == "Player" && complete)
         {
             OpenDoor(true);
         }
@@ -29,7 +39,7 @@ public class OpenGate : MonoBehaviour
 
     void OnTriggerExit(Collider coll)
     {
-        if (coll.gameObject.tag == "Player")
+        if (coll.gameObject.tag == "Player" && complete)
         {
             OpenDoor(false);
         }

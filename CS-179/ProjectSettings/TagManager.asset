@@ -12,6 +12,19 @@ TagManager:
   - FirstPerson Camera
   - Arrow
   - Spear
+<<<<<<< Updated upstream
+=======
+  - Enemy
+  - AlienGun
+  - AlienCamera
+  - Chicken Coup
+  - Chicken01
+  - Chicken02
+  - Chicken03
+  - Chicken04
+  - Chicken05
+  - Canyon Gate
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
