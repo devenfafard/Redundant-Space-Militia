@@ -24,6 +24,9 @@ TagManager:
   - Chicken04
   - Chicken05
   - Canyon Gate
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   layers:
   - Default

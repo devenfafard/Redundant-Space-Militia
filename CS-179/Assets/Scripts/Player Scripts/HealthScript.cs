@@ -38,6 +38,11 @@ public class HealthScript : MonoBehaviour
         gate = GameObject.FindGameObjectWithTag("Canyon Gate");
     }
 
+    void Start()
+    {
+        gate = GameObject.FindGameObjectWithTag("Canyon Gate");
+    }
+
     public void ApplyDamage(float damage)
     {
 
@@ -137,5 +142,8 @@ public class HealthScript : MonoBehaviour
         gate.GetComponent<OpenGate>().UpdateKills();
     }
     
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }
