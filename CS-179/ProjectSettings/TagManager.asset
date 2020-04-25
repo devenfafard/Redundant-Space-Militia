@@ -4,16 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Test Room
-  - Ground
+  - Fire
+  - Arrow
   - Axe
   - Crosshair
-  - Look View
   - FirstPerson Camera
-  - Arrow
+  - Look View
   - Spear
-<<<<<<< Updated upstream
-=======
+
   - Enemy
   - AlienGun
   - AlienCamera
@@ -24,13 +22,11 @@ TagManager:
   - Chicken04
   - Chicken05
   - Canyon Gate
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+
+  - Enemy
+  - AlienGun
+  - AlienCamera
+
   layers:
   - Default
   - TransparentFX
@@ -40,10 +36,10 @@ TagManager:
   - UI
   - 
   - 
-  - FirstPerson
-  - Ground
+  - Environment/Terrain
   - Enemy
   - Player
+  - 
   - 
   - 
   - 
