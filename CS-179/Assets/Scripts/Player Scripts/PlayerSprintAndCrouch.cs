@@ -6,7 +6,7 @@ public class PlayerSprintAndCrouch : MonoBehaviour
 {
     private PlayerMovement playerMovement;
 
-    public float sprint_speed = 10f;
+    public float sprint_speed = 5f;
     public float move_speed = 5f;
     public float crouch_speed = 2f;
 
@@ -23,12 +23,17 @@ public class PlayerSprintAndCrouch : MonoBehaviour
     private float walk_step_distance = 0.4f;
     private float sprint_step_distance = 0.25f;
     private float crouch_step_distance = 0.5f; //larger value because you step less often
+    private PlayerStats player_stats;
+
+    private float sprint_value = 100f;
+    public float sprint_threshold = 1f;
 
     private void Awake()
     {
         playerMovement = GetComponent<PlayerMovement>();
         look_root = transform.GetChild(0); //Gets look root
         player_footstep = GetComponentInChildren<PlayerFootSteps>();
+        player_stats = GetComponent<PlayerStats>();
 
     }
 
@@ -49,11 +54,15 @@ public class PlayerSprintAndCrouch : MonoBehaviour
 
     void Sprint()
     {
-        if(Input.GetKeyDown(KeyCode.LeftShift) && !is_crouching){
-            playerMovement.speed = sprint_speed;
-            player_footstep.step_distance = sprint_step_distance;
-            player_footstep.volume_min = sprint_volume;
-            player_footstep.volume_max = sprint_volume;
+        if(sprint_value > 0f)
+        {
+            if (Input.GetKeyDown(KeyCode.LeftShift) && !is_crouching)
+            {
+                playerMovement.speed = sprint_speed;
+                player_footstep.step_distance = sprint_step_distance;
+                player_footstep.volume_min = sprint_volume;
+                player_footstep.volume_max = sprint_volume;
+            }
         }
 
         if(Input.GetKeyUp(KeyCode.LeftShift) && !is_crouching)
@@ -62,6 +71,34 @@ public class PlayerSprintAndCrouch : MonoBehaviour
             player_footstep.volume_min = walk_volume_min;
             player_footstep.volume_max = walk_volume_max;
             player_footstep.step_distance = walk_step_distance;
+        }
+
+        if(Input.GetKey(KeyCode.LeftShift) && !is_crouching)
+        {
+            sprint_value -= sprint_threshold * Time.deltaTime;
+
+            if(sprint_value <= 0f)
+            {
+                sprint_value = 0f;
+                playerMovement.speed = move_speed;
+                player_footstep.volume_min = walk_volume_min;
+                player_footstep.volume_max = walk_volume_max;
+                player_footstep.step_distance = walk_step_distance;
+            }
+
+            player_stats.DisplayStaminaStats(sprint_value);
+        }
+        else
+        {
+            if(sprint_value != 100f)
+            {
+                sprint_value += (sprint_threshold / 2) * Time.deltaTime;
+                player_stats.DisplayStaminaStats(sprint_value);
+                if(sprint_value > 100f)
+                {
+                    sprint_value = 100f;
+                }
+            }
         }
 
     }

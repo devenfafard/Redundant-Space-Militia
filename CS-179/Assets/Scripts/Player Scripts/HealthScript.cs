@@ -13,6 +13,9 @@ public class HealthScript : MonoBehaviour
     public bool is_player;
     public bool is_alien;
     private bool is_dead;
+    private GameObject gate;
+    private PlayerStats player_stats;
+    
 
     // Start is called before the first frame update
     void Awake()
@@ -27,20 +30,16 @@ public class HealthScript : MonoBehaviour
         }
 
         if(is_player){
-
+            player_stats = GetComponent<PlayerStats>();
         }
        
     }
 
-<<<<<<< Updated upstream
-=======
     void Start()
     {
         gate = GameObject.FindGameObjectWithTag("Canyon Gate");
     }
 
-
->>>>>>> Stashed changes
     public void ApplyDamage(float damage)
     {
 
@@ -51,8 +50,8 @@ public class HealthScript : MonoBehaviour
 
         if (is_player)
         {
-            // show the stats(display the health UI value)
-            //player_Stats.Display_HealthStats(health);
+            
+            player_stats.DisplayHealthStats(health);
         }
 
         
@@ -85,9 +84,11 @@ public class HealthScript : MonoBehaviour
             enemy_controller.enabled = false;
 
             enemy_animator.Dead();
+            KillCounter();
 
             //startCoroutine
             //EnemyManager to spawn more enemies
+
         }
 
         if (is_player)
@@ -124,7 +125,7 @@ public class HealthScript : MonoBehaviour
 
     void RestartGame()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("LEVEL01");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Level1");
     }
 
     void TurnOffGameObject()
@@ -132,5 +133,10 @@ public class HealthScript : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    private void KillCounter()
+    {
+        gate.GetComponent<OpenGate>().UpdateKills();
+    }
+    
 }
 
