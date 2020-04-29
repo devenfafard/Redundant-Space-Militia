@@ -1544,8 +1544,8 @@ GameObject:
   - component: {fileID: 7642179430379207681}
   - component: {fileID: 7642179430375992657}
   m_Layer: 0
-  m_Name: Box001
-  m_TagString: Untagged
+  m_Name: Gun
+  m_TagString: AlienGun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1558,7 +1558,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7642179430379102689}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -1.41, z: 0}
+  m_LocalPosition: {x: 0, y: 0.03, z: 0}
   m_LocalScale: {x: 0.011783254, y: 0.011783254, z: 0.011783254}
   m_Children: []
   m_Father: {fileID: 7642179430379207685}
@@ -1640,7 +1640,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7642179430379102691}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 1.2908782e-22, y: -0.22, z: 0.0000000010089708}
+  m_LocalPosition: {x: 1.2908782e-22, y: 1.22, z: 0.0000000010089708}
   m_LocalScale: {x: 0.0254, y: 0.0254, z: 0.0254}
   m_Children: []
   m_Father: {fileID: 7642179430379207685}
@@ -1858,14 +1858,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walk_speed: 0.5
   run_speed: 5
-  chase_distance: 10
-  attack_distance: 0.5
-  follow_after_attack_dist: 2
+  chase_distance: 20
+  attack_distance: 10
+  follow_after_attack_dist: 10
   patrol_radius_min: 2
   patrol_radius_max: 20
   patrol_time_limit: 5
-  wait_before_attack: 2
+  wait_before_attack: 1
   attack_point: {fileID: 0}
+  enemy_damage: 5
 --- !u!114 &1167453298112544020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2105,7 +2106,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7642179430379102717}
   m_LocalRotation: {x: 0.5, y: -0.50000006, z: -0.49999994, w: 0.5}
-  m_LocalPosition: {x: 0, y: -1.41, z: 0}
+  m_LocalPosition: {x: 0, y: 0.03, z: 0}
   m_LocalScale: {x: 0.0254, y: 0.0254, z: 0.0254}
   m_Children: []
   m_Father: {fileID: 7642179430379207685}
@@ -2135,7 +2136,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7642179430379102719}
   m_LocalRotation: {x: 0.59636784, y: -0.3799283, z: -0.5963678, w: 0.3799282}
-  m_LocalPosition: {x: 5.197762e-14, y: -0.72, z: 0.12455206}
+  m_LocalPosition: {x: 5.197762e-14, y: 0.72, z: 0.12455206}
   m_LocalScale: {x: 0.0254, y: 0.025399998, z: 0.0254}
   m_Children:
   - {fileID: 7642179430379207731}
@@ -2166,7 +2167,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7642179430919228710}
   m_LocalRotation: {x: -0, y: -0.5056423, z: -0, w: 0.86274326}
-  m_LocalPosition: {x: 16.478611, y: 0.77100015, z: -0.06717348}
+  m_LocalPosition: {x: 16.478611, y: 2.21, z: -0.06717348}
   m_LocalScale: {x: 4.2208853, y: 0.33920133, z: 4.4217005}
   m_Children: []
   m_Father: {fileID: 7642179430379207685}
@@ -2196,7 +2197,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7642179431675501221}
   m_LocalRotation: {x: -0, y: -0.5056423, z: -0, w: 0.86274326}
-  m_LocalPosition: {x: 16.478611, y: 8.104533, z: -0.06717348}
+  m_LocalPosition: {x: 16.478611, y: 9.54, z: -0.06717348}
   m_LocalScale: {x: 4.2208853, y: 0.33920133, z: 4.4217005}
   m_Children: []
   m_Father: {fileID: 7642179430379207685}

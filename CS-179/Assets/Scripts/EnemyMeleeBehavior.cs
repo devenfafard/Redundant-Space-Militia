@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public enum EnemyState{ PATROL, FOLLOW, ATTACK}
+public enum EnemyState { PATROL, FOLLOW, ATTACK }
 
 public class EnemyMeleeBehavior : MonoBehaviour
 {
@@ -33,12 +33,20 @@ public class EnemyMeleeBehavior : MonoBehaviour
     private Transform target;
     public GameObject attack_point;
 
+    private GameObject gun;
+
+    private Transform enemy;
+
+    [SerializeField]
+    private float enemy_damage = 5f;
+
     private void Awake()
     {
         enemy_Anima = GetComponent<EnemyAnimation>();
         navAgent = GetComponent<NavMeshAgent>();
 
         target = GameObject.FindWithTag("Player").transform;
+        enemy = GetComponent<Transform>();
     }
 
 
@@ -79,7 +87,7 @@ public class EnemyMeleeBehavior : MonoBehaviour
 
         patrol_timer += Time.deltaTime;
 
-        if(patrol_timer > patrol_time_limit)
+        if (patrol_timer > patrol_time_limit)
         {
             NewRandomDestination();
 
@@ -163,6 +171,19 @@ public class EnemyMeleeBehavior : MonoBehaviour
         if (attack_timer > wait_before_attack)
         {
             enemy_Anima.Attack();
+
+            RaycastHit hit;
+
+            if (Physics.Raycast(gun.transform.position, target.position - enemy.position, out hit))
+            {
+
+                if (hit.collider.gameObject.tag == Tags.PLAYER_TAG)
+                {
+
+                    hit.transform.GetComponent<HealthScript>().ApplyDamage(enemy_damage);
+                }
+
+            }
 
             attack_timer = 0f;
 
