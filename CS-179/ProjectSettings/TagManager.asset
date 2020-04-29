@@ -11,22 +11,19 @@ TagManager:
   - FirstPerson Camera
   - Look View
   - Spear
-
   - Enemy
   - AlienGun
   - AlienCamera
   - Chicken Coup
-  - Chicken01
-  - Chicken02
-  - Chicken03
-  - Chicken04
-  - Chicken05
   - Canyon Gate
-
-  - Enemy
-  - AlienGun
-  - AlienCamera
-
+  - Chicken05
+  - Chicken03
+  - Chicken01
+  - Chicken04
+  - Chicken02
+  - First Gate
+  - Second Gate
+  - Game Intro
   layers:
   - Default
   - TransparentFX

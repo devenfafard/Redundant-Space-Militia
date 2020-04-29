@@ -39,13 +39,27 @@ public class EnemyMeleeBehavior : MonoBehaviour
     [SerializeField]
     private float enemy_damage = 5f;
 
-    private void Awake()
+    [SerializeField]
+    private AudioSource shoot_sound;
+
+    [SerializeField]
+    private GameObject plasma_bullet;
+
+    [SerializeField]
+    private Transform plasma_bullet_start_position;
+
+    private Rigidbody bullet;
+    public float bullet_speed = 30f;
+    public float deactivate_timer = 3f;
+
+    void Awake()
     {
         enemy_Anima = GetComponent<EnemyAnimation>();
         navAgent = GetComponent<NavMeshAgent>();
         gun = GameObject.FindWithTag("AlienGun");
         target = GameObject.FindWithTag("Player").transform;
         enemy = GetComponent<Transform>();
+        bullet = GetComponent<Rigidbody>();
     }
 
 
@@ -74,6 +88,7 @@ public class EnemyMeleeBehavior : MonoBehaviour
 
         if (enemy_State == EnemyState.ATTACK)
         {
+            enemy.LookAt(target);
             Attack();
         }
 
@@ -169,19 +184,19 @@ public class EnemyMeleeBehavior : MonoBehaviour
         //attack once for the enemy
         if (attack_timer > wait_before_attack)
         {
+
             enemy_Anima.Attack();
 
             RaycastHit hit;
-            print("About to ray trace");
-            if (Physics.Raycast(gun.transform.position, target.position - enemy.position, out hit))
+            Vector3 direction = target.position - enemy.position;
+
+            if (Physics.Raycast(gun.transform.position, direction, out hit))
             {
-
-                print("RayTracing");
-
+                GameObject plasma = GameObject.Instantiate(plasma_bullet, plasma_bullet_start_position.position, transform.rotation);
+                plasma.GetComponent<Rigidbody>().AddForce(direction * bullet_speed);
+                
                 if (hit.collider.gameObject.tag == Tags.PLAYER_TAG)
                 {
-                    print("We shot the player");
-
                     hit.transform.GetComponent<HealthScript>().ApplyDamage(enemy_damage);
                 }
 
@@ -189,7 +204,7 @@ public class EnemyMeleeBehavior : MonoBehaviour
 
             attack_timer = 0f;
 
-            //can play sound here for attack
+            shoot_sound.Play();
         }
 
         if (Vector3.Distance(transform.position, target.position) > attack_distance + follow_after_attack_dist)
@@ -232,6 +247,11 @@ public class EnemyMeleeBehavior : MonoBehaviour
     public EnemyState Enemy_State
     {
         get; set;
+    }
+
+    void playShootSound()
+    {
+        
     }
 
 
