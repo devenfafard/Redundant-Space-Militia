@@ -16,12 +16,6 @@ public class OpenGate : MonoBehaviour
 
     bool complete_Kills;
 
-    public GameObject player;
-
-    private int alien_Deaths;
-
-    bool complete_Kills;
-
     Animator left_door;
     Animator right_door;
 
@@ -30,7 +24,6 @@ public class OpenGate : MonoBehaviour
         left_door = hinge1.GetComponent<Animator>();
         right_door = hinge2.GetComponent<Animator>();
     }
-
 
     void Update()
     {
@@ -62,7 +55,7 @@ public class OpenGate : MonoBehaviour
 
     private void CheckKills()
     {
-        if(alien_Deaths == 3)
+        if (alien_Deaths == 3)
         {
             complete_Kills = true;
         }

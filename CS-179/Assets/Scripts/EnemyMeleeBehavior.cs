@@ -32,7 +32,6 @@ public class EnemyMeleeBehavior : MonoBehaviour
 
     private Transform target;
     public GameObject attack_point;
-
     private GameObject gun;
 
     private Transform enemy;
@@ -57,7 +56,7 @@ public class EnemyMeleeBehavior : MonoBehaviour
     {
         enemy_Anima = GetComponent<EnemyAnimation>();
         navAgent = GetComponent<NavMeshAgent>();
-
+        gun = GameObject.FindWithTag("AlienGun");
         target = GameObject.FindWithTag("Player").transform;
         enemy = GetComponent<Transform>();
         bullet = GetComponent<Rigidbody>();
@@ -189,7 +188,6 @@ public class EnemyMeleeBehavior : MonoBehaviour
             enemy_Anima.Attack();
 
             RaycastHit hit;
-
             Vector3 direction = target.position - enemy.position;
 
             if (Physics.Raycast(gun.transform.position, direction, out hit))
@@ -199,7 +197,6 @@ public class EnemyMeleeBehavior : MonoBehaviour
                 
                 if (hit.collider.gameObject.tag == Tags.PLAYER_TAG)
                 {
-
                     hit.transform.GetComponent<HealthScript>().ApplyDamage(enemy_damage);
                 }
 
@@ -214,6 +211,8 @@ public class EnemyMeleeBehavior : MonoBehaviour
         {
             enemy_State = EnemyState.FOLLOW;
         }
+
+
 
     }
 

@@ -51,4 +51,9 @@ public class FirstGate : MonoBehaviour
         right_door.SetBool("open", state);
     }
 
+    public bool GetFirstCheckpoint()
+    {
+        return complete;
+    }
+
 }
