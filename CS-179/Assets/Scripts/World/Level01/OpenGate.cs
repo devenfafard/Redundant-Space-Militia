@@ -4,11 +4,23 @@ using UnityEngine;
 
 public class OpenGate : MonoBehaviour
 {
-   public GameObject hinge1;
+    public GameObject hinge1;
 
     public GameObject hinge2;
 
-   public GameObject trigger;
+    public GameObject trigger;
+
+    public GameObject player;
+
+    private int alien_Deaths;
+
+    bool complete_Kills;
+
+    public GameObject player;
+
+    private int alien_Deaths;
+
+    bool complete_Kills;
 
     public GameObject player;
 
@@ -25,7 +37,8 @@ public class OpenGate : MonoBehaviour
         right_door = hinge2.GetComponent<Animator>();
     }
 
-     void Update()
+    void Update()
+
     {
         CheckKills();
     }

@@ -14,6 +14,7 @@ public class HealthScript : MonoBehaviour
     public bool is_alien;
     private bool is_dead;
     private GameObject gate;
+    private PlayerStats player_stats;
     
 
     // Start is called before the first frame update
@@ -29,19 +30,9 @@ public class HealthScript : MonoBehaviour
         }
 
         if(is_player){
-
+            player_stats = GetComponent<PlayerStats>();
         }
        
-    }
-
-    void Start()
-    {
-        gate = GameObject.FindGameObjectWithTag("Canyon Gate");
-    }
-
-    void Start()
-    {
-        gate = GameObject.FindGameObjectWithTag("Canyon Gate");
     }
 
     void Start()
@@ -59,8 +50,8 @@ public class HealthScript : MonoBehaviour
 
         if (is_player)
         {
-            // show the stats(display the health UI value)
-            //player_Stats.Display_HealthStats(health);
+            
+            player_stats.DisplayHealthStats(health);
         }
 
         
@@ -137,6 +128,7 @@ public class HealthScript : MonoBehaviour
     {
 
         UnityEngine.SceneManagement.SceneManager.LoadScene("LEVEL01");
+
     }
 
     void TurnOffGameObject()
@@ -148,6 +140,5 @@ public class HealthScript : MonoBehaviour
     {
         gate.GetComponent<OpenGate>().UpdateKills();
     }
-
 }
 

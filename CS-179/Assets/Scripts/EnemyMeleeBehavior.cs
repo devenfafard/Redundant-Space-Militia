@@ -1,10 +1,9 @@
-
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public enum EnemyState{ PATROL, FOLLOW, ATTACK}
+public enum EnemyState { PATROL, FOLLOW, ATTACK }
 
 public class EnemyMeleeBehavior : MonoBehaviour
 {
@@ -33,7 +32,10 @@ public class EnemyMeleeBehavior : MonoBehaviour
 
     private Transform target;
     public GameObject attack_point;
+
     private GameObject gun;
+
+    private Transform enemy;
 
     [SerializeField]
     private float enemy_damage = 5f;
@@ -42,8 +44,9 @@ public class EnemyMeleeBehavior : MonoBehaviour
     {
         enemy_Anima = GetComponent<EnemyAnimation>();
         navAgent = GetComponent<NavMeshAgent>();
-        gun = GameObject.FindWithTag("AlienGun");
+
         target = GameObject.FindWithTag("Player").transform;
+        enemy = GetComponent<Transform>();
     }
 
 
@@ -84,7 +87,7 @@ public class EnemyMeleeBehavior : MonoBehaviour
 
         patrol_timer += Time.deltaTime;
 
-        if(patrol_timer > patrol_time_limit)
+        if (patrol_timer > patrol_time_limit)
         {
             NewRandomDestination();
 
@@ -171,14 +174,11 @@ public class EnemyMeleeBehavior : MonoBehaviour
 
             RaycastHit hit;
 
-            if (Physics.Raycast(gun.transform.position, gun.transform.forward, out hit))
+            if (Physics.Raycast(gun.transform.position, target.position - enemy.position, out hit))
             {
-
-                //print("RayTracing");
 
                 if (hit.collider.gameObject.tag == Tags.PLAYER_TAG)
                 {
-                    print("We shot the player");
 
                     hit.transform.GetComponent<HealthScript>().ApplyDamage(enemy_damage);
                 }
@@ -194,8 +194,6 @@ public class EnemyMeleeBehavior : MonoBehaviour
         {
             enemy_State = EnemyState.FOLLOW;
         }
-
-        
 
     }
 
@@ -234,4 +232,3 @@ public class EnemyMeleeBehavior : MonoBehaviour
 
 
 }
-
