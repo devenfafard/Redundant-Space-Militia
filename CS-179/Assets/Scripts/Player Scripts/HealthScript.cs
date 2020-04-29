@@ -75,7 +75,6 @@ public class HealthScript : MonoBehaviour
 
     } // apply damage
 
-
     void PlayerDied()
     {
         if (is_alien)
@@ -126,9 +125,7 @@ public class HealthScript : MonoBehaviour
 
     void RestartGame()
     {
-
-        UnityEngine.SceneManagement.SceneManager.LoadScene("LEVEL01");
-
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Level1");
     }
 
     void TurnOffGameObject()
@@ -140,5 +137,6 @@ public class HealthScript : MonoBehaviour
     {
         gate.GetComponent<OpenGate>().UpdateKills();
     }
+    
 }
 
