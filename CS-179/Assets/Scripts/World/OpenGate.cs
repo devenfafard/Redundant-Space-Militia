@@ -55,7 +55,7 @@ public class OpenGate : MonoBehaviour
 
     private void CheckKills()
     {
-        if (alien_Deaths == 3)
+        if (alien_Deaths == 5)
         {
             complete_Kills = true;
         }
@@ -65,7 +65,17 @@ public class OpenGate : MonoBehaviour
     public void UpdateKills()
     {
         ++alien_Deaths;
-        print(alien_Deaths);
+        //print(alien_Deaths);
+    }
+
+    public int GetAlienKills()
+    {
+        return alien_Deaths;
+    }
+
+    public bool GetSecondCheckpoint()
+    {
+        return complete_Kills;
     }
 
 }

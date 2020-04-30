@@ -24,6 +24,15 @@ TagManager:
   - First Gate
   - Second Gate
   - Game Intro
+  - Station1_Door
+  - PowerStation2
+  - PowerCell2
+  - PowerStation1
+  - PowerCell1
+  - Terminal1
+  - Terminal2
+  - Space Ship Camera
+  - Space Ship
   layers:
   - Default
   - TransparentFX

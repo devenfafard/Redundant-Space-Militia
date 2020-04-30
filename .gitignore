@@ -109,3 +109,445 @@ CS-179/Assets/Animations/World/Fence/left_idle.anim
 CS-179/Assets/Animations/World/Fence/left_door.anim
 CS-179/Assets/Animations/World/Fence/hinge_2.controller
 CS-179/Assets/Animations/World/Fence/hinge_1.controller
+CS-179/Assets/SciFi_Battery_Pack_free/Textures/battery_normal.png
+CS-179/Assets/SciFi_Battery_Pack_free/Textures/battery_emissive.png
+CS-179/Assets/SciFi_Battery_Pack_free/Textures/battery_damaged.psd
+CS-179/Assets/SciFi_Battery_Pack_free/Textures/battery.psd
+CS-179/Assets/SciFi_Battery_Pack_free/Textures/Battery.mat
+CS-179/Assets/SciFi_Battery_Pack_free/Textures/Battery damaged.mat
+CS-179/Assets/SciFi_Battery_Pack_free/Textures/Background_Grid.psd
+CS-179/Assets/SciFi_Battery_Pack_free/Textures/Background_Grid.mat
+CS-179/Assets/SciFi_Battery_Pack_free/Prefabs/damaged_Crate01.prefab
+CS-179/Assets/SciFi_Battery_Pack_free/Prefabs/damaged_Battery_small_06.prefab
+CS-179/Assets/SciFi_Battery_Pack_free/Prefabs/damaged_Battery_medium_05.prefab
+CS-179/Assets/SciFi_Battery_Pack_free/Prefabs/Crate01.prefab
+CS-179/Assets/SciFi_Battery_Pack_free/Prefabs/Battery_small_06.prefab
+CS-179/Assets/SciFi_Battery_Pack_free/Prefabs/Battery_medium_05.prefab
+CS-179/Assets/SciFi_Battery_Pack_free/FBX/Crate01.FBX
+CS-179/Assets/SciFi_Battery_Pack_free/FBX/Battery_small_06.FBX
+CS-179/Assets/SciFi_Battery_Pack_free/FBX/Battery_medium_05.FBX
+CS-179/Assets/SciFi_Battery_Pack_free/Demo.unity
+CS-179/Assets/Sci-Fi Styled Modular Pack/Textures/window_big_transparent_mask.png
+CS-179/Assets/Sci-Fi Styled Modular Pack/Textures/window_big_emission_mask.png
+CS-179/Assets/Sci-Fi Styled Modular Pack/Textures/window_big.png
+CS-179/Assets/Sci-Fi Styled Modular Pack/Textures/second-color.png
+CS-179/Assets/Sci-Fi Styled Modular Pack/Textures/projector_warning.png
+CS-179/Assets/Sci-Fi Styled Modular Pack/Textures/nature_leaves.png
+CS-179/Assets/Sci-Fi Styled Modular Pack/Textures/mettalic.png
+CS-179/Assets/Sci-Fi Styled Modular Pack/Textures/lattice.png
+CS-179/Assets/Sci-Fi Styled Modular Pack/Textures/lattice-emision-mask.png
+CS-179/Assets/Sci-Fi Styled Modular Pack/Textures/keyboard.png
+CS-179/Assets/Sci-Fi Styled Modular Pack/Textures/hologram texture.png
+CS-179/Assets/Sci-Fi Styled Modular Pack/Textures/grey-color.png
+CS-179/Assets/Sci-Fi Styled Modular Pack/Textures/green-color.png
+CS-179/Assets/Sci-Fi Styled Modular Pack/Textures/dark-color.png
+CS-179/Assets/Sci-Fi Styled Modular Pack/Textures/computer_wall_texture.png
+CS-179/Assets/Sci-Fi Styled Modular Pack/Textures/computer_wall_metalic.png
+CS-179/Assets/Sci-Fi Styled Modular Pack/Textures/coffee-color.png
+CS-179/Assets/Sci-Fi Styled Modular Pack/Textures/bush.png
+CS-179/Assets/Sci-Fi Styled Modular Pack/Textures/blue-color.png
+CS-179/Assets/Sci-Fi Styled Modular Pack/Textures/blood-color.png
+CS-179/Assets/Sci-Fi Styled Modular Pack/Textures/black-color.png
+CS-179/Assets/Sci-Fi Styled Modular Pack/Textures/base-color.png
+CS-179/Assets/Sci-Fi Styled Modular Pack/Textures/base-color-normal.png
+CS-179/Assets/Sci-Fi Styled Modular Pack/Readme.txt
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Windows/window_small.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Windows/window_big_supplement.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Windows/window_big_plug.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Windows/window_big_no_LOD.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Windows/window_big_corner_plug.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Windows/window_big_corner_far_plug.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Windows/window_big_corner_far.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Windows/window_big_corner.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Windows/window_big_blocker_3.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Windows/window_big_blocker_2.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Windows/window_big_blocker.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Windows/window_big.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Windows/Complete Windows/window_big_corner_far.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Windows/Complete Windows/window_big_corner_blocker.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Windows/Complete Windows/window_big_corner.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Windows/Complete Windows/window_big_blocker.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Windows/Complete Windows/window_big.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Walls/wall_big.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Walls/Simple/decorative_wall_H.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Walls/Simple/decorative_wall_G.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Walls/Simple/decorative_wall_F.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Walls/Simple/decorative_wall_E.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Walls/Simple/blank_wall_D.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Walls/Simple/blank_wall_C.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Walls/Simple/blank_wall_B.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Walls/Simple/blank_wall_A.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Walls/Half walls/decorative_half_wall_6.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Walls/Half walls/decorative_half_wall_5.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Walls/Half walls/decorative_half_wall_4_LOD.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Walls/Half walls/decorative_half_wall_3_LOD.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Walls/Half walls/decorative_half_wall_2_LOD.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Walls/Half walls/decorative_half_wall_1_LOD.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Walls/glass_panel_1_corner.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Walls/glass_panel_1.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Walls/decorative_wall_6.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Walls/decorative_wall_5.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Walls/decorative_wall_4_no_computer.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Walls/decorative_wall_4_computer.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Walls/decorative_wall_3.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Walls/decorative_wall_2.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Walls/decorative_wall_1.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Stairs/stairs_small_with_emmision.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Stairs/stairs_small_no_emmision.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Stairs/stairs_small_corner_with_emmision.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Stairs/stairs_small_corner_no_emmision.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Stairs/stairs_small.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Stairs/stairs_big_with_emmision.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Machines/vending_machine.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Machines/torpedo_docking_station_2_side.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Machines/torpedo_docking_station_1_side.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Machines/torpedo.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Machines/storage_container_small.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Machines/storage_container_big.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Machines/shield_generator.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Machines/Shield Core.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Machines/rotor.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Machines/projector_2.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Machines/projector.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Machines/projector stars.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Machines/generator.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Machines/container_small.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Machines/container_big.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Machines/Capacitor.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Machines/Battery_medium.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Machines/Battery_big.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Machines/Battery.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Lights/light_wall_3_blue.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Lights/light_wall_3.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Lights/light_wall_2_blue.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Lights/light_wall_2.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Lights/light_wall_1_blue.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Lights/light_wall_1.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Lights/light_corner_1_blue.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Lights/light_corner_1.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Lights/light_celing_2.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Lights/light_celing_1.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Joints/Joint_Y_6.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Joints/Joint_X_6.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Joints/Joint_T_6.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Floors/floor_6.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Floors/floor_5.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Floors/floor_4.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Floors/floor_3_no_clamps.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Floors/floor_3.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Floors/floor_2_no_lattice.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Floors/floor_2_L.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Floors/floor_2_blank.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Floors/floor_2.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Floors/floor_1.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Extended Primitives/Sphere_32_extended.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Extended Primitives/Sphere_16_extended.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Extended Primitives/Cylinder_16_extended.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Extended Primitives/Cube_2x2_extended.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Extended Primitives/Cube_1x2_extended.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Extended Primitives/Cube_1x1_extended.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Doors/glass_panel_1_with_door.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Doors/door_3.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Doors/door_2.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Doors/door_1.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/Tables/table_2.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/Tables/desk_no_computer.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/Tables/desk.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/Tables/decorative_table_small_no_glass.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/Tables/decorative_table_small_glass.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/Tables/decorative_table_no_glass_only_top.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/Tables/decorative_table_no_glass.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/Tables/decorative_table_glass.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/sing_small.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/sign.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/shelf_small.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/shelf.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/pilot_seat.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/hydroponic.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/floor_corner_ornament_pipes_corner.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/floor_corner_ornament_pipes.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/floor_corner_ornament.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/double_bed.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/decorative_sofa.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/decorative_plant_small.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/decorative_plant_desk.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/decorative_plant.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/decorative_pilow.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/decorative_chair.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/console_screen.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/console_celing.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/console.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/computer_station.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/Column/column_middle.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/Column/column_kneel_2.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/Column/column_kneel.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/Column/column_end.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/cabinet_L_cutted.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/cabinet_L.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/cabinet.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/bunk_bed.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/bulletin_board_small.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/bulletin_board_big.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/big_screen.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/bed.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/Arts/art_6.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/Arts/art_5.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/Arts/art_4.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/Arts/art_3.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/Arts/art_2.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Decorative elements/Arts/art_1.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_X.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_T.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_L.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_I.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_3.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_2.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Prefabs/Corridors/Corridor_1.prefab
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/window_big_with_side_offset_LOD1.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/window_big_with_side_offset_LOD0.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/window_big_with_side_offset.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/window_big_with_side_LOD1.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/window_big_with_side_LOD0.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/window_big_with_side_full_offset_LOD1.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/window_big_with_side_full_offset_LOD0.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/window_big_with_side_full_offset.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/window_big_with_side_full_LOD1.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/window_big_with_side_full_LOD0.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/window_big_with_side_full.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/window_big_with_side.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/window_big_supplement.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/window_big_plug.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/window_big_no_side_LOD1.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/window_big_no_side_LOD0.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/window_big_no_side_full_LOD1.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/window_big_no_side_full_LOD0.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/window_big_no_side_full.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/window_big_no_side.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/window_big_corner_plug.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/window_big_corner_LOD1.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/window_big_corner_LOD0.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/window_big_corner_far_plug.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/window_big_corner_far_LOD1.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/window_big_corner_far_LOD0.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/window_big_blocker_3.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/window_big_blocker_2.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/window_big_blocker.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/wall_small_no_side_full_LOD0.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/wall_big_no_side_full_LOD1.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/wall_big_no_side_full_LOD0.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/vending_machine.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/torpedo_docking_station_2_side.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/torpedo_docking_station_1_side.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/torpedo.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/table_2.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/storage_container_small.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/storage_container_big.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/stairs_small_with_emmision.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/stairs_small_no_emmision.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/stairs_small_corner_with_emmision.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/stairs_small_corner_no_emmision.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/stairs_small.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/stairs_big_with_emmision.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/stairs_big.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/Sphere_32_extended.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/Sphere_16_extended.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/sing_small.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/sing.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/sign.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/shield_generator_rotor.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/shield_generator.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/shelf_small.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/shelf.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/rotor.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/projector_LOD1.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/projector_LOD0.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/projector_2.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/projector.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/pilot_seat.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/Materials/No Name.mat
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/Materials/base color.mat
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/light_wall_3_blue.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/light_wall_3.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/light_wall_2_blue.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/light_wall_2.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/light_wall_1_blue.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/light_wall_1.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/light_corner_1_blue.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/light_corner_1.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/light_celing_2.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/light_celing_1.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/Joint_Y_6.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/Joint_X_6.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/Joint_T_6.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/hydroponic.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/hologram_LOD1.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/hologram_LOD0.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/hologram.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/glass_panel_1_with_door.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/glass_panel_1_door.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/glass_panel_1_corner.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/glass_panel_1.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/generator.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/frame_door_3_colision_mesh.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/frame_door_3.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/frame_door_2_colision_mesh.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/frame_door_2.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/frame_door_1_colision_mesh.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/frame_door_1.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/floor_corner_ornament_pipes_corner.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/floor_corner_ornament_pipes.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/floor_corner_ornament.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/floor_6.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/floor_5.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/floor_4.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/floor_3_no_clamps.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/floor_3_LOD1.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/floor_3_LOD0.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/floor_3.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/floor_2_no_lattice_LOD1.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/floor_2_no_lattice_LOD0.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/floor_2_no_lattice.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/floor_2_LOD1.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/floor_2_LOD0.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/floor_2_L_LOD1.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/floor_2_L_LOD0.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/floor_2_blank.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/floor_2.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/floor_1_LOD1.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/floor_1_LOD0.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/floor_1.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/double_bed.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/door_3_top_B.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/door_3_top_A.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/door_3_bottom_B.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/door_3_bottom_A.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/door_2_right.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/door_2_left.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/door_1_right.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/door_1_left.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/desk_no_computer.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/desk_LOD0.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/desk.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_wall_H.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_wall_G.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_wall_F.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_wall_E.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_wall_6.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_wall_5.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_wall_4_no_computer_LOD1.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_wall_4_no_computer_LOD0.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_wall_4_computer_LOD1.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_wall_4_computer_LOD0.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_wall_3_LOD1.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_wall_3_LOD0.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_wall_2_LOD1.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_wall_2_LOD0.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_wall_1_LOD1.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_wall_1_LOD0.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_table_small_no_glass.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_table_small_glass.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_table_no_glass_only_top.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_table_no_glass.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_table_glass_only_top.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_table_glass.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_sofa_LOD1.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_sofa_LOD0.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_sofa.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_plant_small.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_plant_desk.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_plant.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_pilow_LOD1.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_pilow_LOD0.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_pilow.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_half_wall_6.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_half_wall_5.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_half_wall_4_LOD1.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_half_wall_4_LOD0.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_half_wall_3_LOD1.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_half_wall_3_LOD0.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_half_wall_2_LOD1.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_half_wall_2_LOD0.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_half_wall_1_LOD1.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_half_wall_1_LOD0.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_chair_LOD1.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_chair_LOD0.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/decorative_chair.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/Cylinder_16_extended.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/Cube_2x2_extended.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/Cube_1x2_extended.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/Cube_1x1_extended.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/container_small.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/container_big.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/console_screen.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/console_celing.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/console.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/computer_station.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/column_middle.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/column_kneel_2.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/column_kneel.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/column_end.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/cabinet_L_cutted.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/cabinet_L.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/cabinet.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/bunk_bed.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/bulletin_board_small.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/bulletin_board_big.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/blank_wall_D.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/blank_wall_C.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/blank_wall_B.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/blank_wall_A.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/big_screen.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/bed.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/battery_medium.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/battery_big.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/battery.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/art_6.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/art_5.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/art_4.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/art_3.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/art_2.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Models/art_1.fbx
+CS-179/Assets/Sci-Fi Styled Modular Pack/Materials/window.mat
+CS-179/Assets/Sci-Fi Styled Modular Pack/Materials/white emision.mat
+CS-179/Assets/Sci-Fi Styled Modular Pack/Materials/screen.mat
+CS-179/Assets/Sci-Fi Styled Modular Pack/Materials/projector_warning.mat
+CS-179/Assets/Sci-Fi Styled Modular Pack/Materials/Palletes/iron man color.mat
+CS-179/Assets/Sci-Fi Styled Modular Pack/Materials/Palletes/dark color.mat
+CS-179/Assets/Sci-Fi Styled Modular Pack/Materials/Palletes/coffee color.mat
+CS-179/Assets/Sci-Fi Styled Modular Pack/Materials/Palletes/blue color.mat
+CS-179/Assets/Sci-Fi Styled Modular Pack/Materials/Palletes/base color.mat
+CS-179/Assets/Sci-Fi Styled Modular Pack/Materials/nature_root.mat
+CS-179/Assets/Sci-Fi Styled Modular Pack/Materials/nature_leaves.mat
+CS-179/Assets/Sci-Fi Styled Modular Pack/Materials/nature_ground.mat
+CS-179/Assets/Sci-Fi Styled Modular Pack/Materials/nature_bush.mat
+CS-179/Assets/Sci-Fi Styled Modular Pack/Materials/lattice.mat
+CS-179/Assets/Sci-Fi Styled Modular Pack/Materials/lattice floor.mat
+CS-179/Assets/Sci-Fi Styled Modular Pack/Materials/hologram_particle.mat
+CS-179/Assets/Sci-Fi Styled Modular Pack/Materials/hologram.mat
+CS-179/Assets/Sci-Fi Styled Modular Pack/Materials/glass.mat
+CS-179/Assets/Sci-Fi Styled Modular Pack/Materials/comuter_wall.mat
+CS-179/Assets/Sci-Fi Styled Modular Pack/Materials/blue emission.mat
+CS-179/Assets/Sci-Fi Styled Modular Pack/Example scenes/outpost with snow.unity
+CS-179/Assets/Sci-Fi Styled Modular Pack/Example scenes/outpost on desert.unity
+CS-179/Assets/Sci-Fi Styled Modular Pack/Example scenes/Materials/Snow.mat
+CS-179/Assets/Sci-Fi Styled Modular Pack/Example scenes/Materials/Sand.mat
+CS-179/Assets/Sci-Fi Styled Modular Pack/Animations/glass_panel_1_with_door.controller
+CS-179/Assets/Sci-Fi Styled Modular Pack/Animations/glass_door_opened.anim
+CS-179/Assets/Sci-Fi Styled Modular Pack/Animations/glass_door_open.anim
+CS-179/Assets/Sci-Fi Styled Modular Pack/Animations/glass_door_closed.anim
+CS-179/Assets/Sci-Fi Styled Modular Pack/Animations/glass_door_close.anim
+CS-179/Assets/Sci-Fi Styled Modular Pack/Animations/frame_door_3.controller
+CS-179/Assets/Sci-Fi Styled Modular Pack/Animations/frame_door_2.controller
+CS-179/Assets/Sci-Fi Styled Modular Pack/Animations/frame_door_1.controller
+CS-179/Assets/Sci-Fi Styled Modular Pack/Animations/door_3_opened.anim
+CS-179/Assets/Sci-Fi Styled Modular Pack/Animations/door_3_open.anim
+CS-179/Assets/Sci-Fi Styled Modular Pack/Animations/door_3_closed.anim
+CS-179/Assets/Sci-Fi Styled Modular Pack/Animations/door_3_close.anim
+CS-179/Assets/Sci-Fi Styled Modular Pack/Animations/door_2_opened.anim
+CS-179/Assets/Sci-Fi Styled Modular Pack/Animations/door_2_open.anim
+CS-179/Assets/Sci-Fi Styled Modular Pack/Animations/door_2_closed.anim
+CS-179/Assets/Sci-Fi Styled Modular Pack/Animations/door_2_close.anim
+CS-179/Assets/Sci-Fi Styled Modular Pack/Animations/door_1_opened.anim
+CS-179/Assets/Sci-Fi Styled Modular Pack/Animations/door_1_open.anim
+CS-179/Assets/Sci-Fi Styled Modular Pack/Animations/door_1_closed.anim
+CS-179/Assets/Sci-Fi Styled Modular Pack/Animations/door_1_close.anim
