@@ -125,7 +125,7 @@ public class HealthScript : MonoBehaviour
 
     void RestartGame()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("LEVEL01");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Level1");
     }
 
     void TurnOffGameObject()

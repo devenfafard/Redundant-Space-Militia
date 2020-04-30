@@ -192,7 +192,6 @@ public class EnemyMeleeBehavior : MonoBehaviour
 
             if (Physics.Raycast(plasma_bullet_start_position.position, direction, out hit))
             {
-                print("RayTracing");
                 GameObject plasma = GameObject.Instantiate(plasma_bullet, plasma_bullet_start_position.position, transform.rotation);
                 plasma.GetComponent<Rigidbody>().AddForce(direction * bullet_speed);
                 

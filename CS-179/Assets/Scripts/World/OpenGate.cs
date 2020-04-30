@@ -65,7 +65,7 @@ public class OpenGate : MonoBehaviour
     public void UpdateKills()
     {
         ++alien_Deaths;
-        //print(alien_Deaths);
+        print(alien_Deaths);
     }
 
     public int GetAlienKills()
