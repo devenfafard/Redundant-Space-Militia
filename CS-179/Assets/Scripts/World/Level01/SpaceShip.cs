@@ -62,7 +62,7 @@ public class SpaceShip : MonoBehaviour
 
     private void CheckTakeOff()
     {
-        if(player_entered && terminal1 && terminal2 && killCount == 10)
+        if(player_entered && terminal1 && terminal2 && killCount >= 10)
 
         {
             print("Player Entered");
