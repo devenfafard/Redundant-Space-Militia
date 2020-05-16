@@ -9,7 +9,7 @@ public class waterPlayerPhys : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -21,21 +21,21 @@ public class waterPlayerPhys : MonoBehaviour
     void OnTriggerStay(Collider collider)
     {
 
-        if (collider.tag == "Environment")
+        if (collider == GameObject.Find("Water4Simple").GetComponent<Collider>())
         {
             if (Input.GetKey("space"))
             {
 
-                GetComponent<Rigidbody>().velocity = (-Physics.gravity * gravMultiplier);
+                GameObject.Find("playerController").GetComponent<Rigidbody>().velocity = (-Physics.gravity * gravMultiplier);
                 //GetComponent<Rigidbody>().AddForce(-Physics.gravity * gravMultiplier * .9f);
             }
             else if (Input.GetKey("left ctrl"))
             {
-                GetComponent<Rigidbody>().velocity = (Physics.gravity * gravMultiplier *1.1f);
+                GameObject.Find("playerController").GetComponent<Rigidbody>().velocity = (Physics.gravity * gravMultiplier * 1.1f);
                 //GetComponent<Rigidbody>().AddForce(Physics.gravity * gravMultiplier *.9f);
             }
 
-            GetComponent<Rigidbody>().AddForce(-Physics.gravity * .505f);
+            GameObject.Find("playerController").GetComponent<Rigidbody>().AddForce(-Physics.gravity * .505f);
 
         }
 

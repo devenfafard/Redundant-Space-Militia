@@ -71,6 +71,7 @@ public class PlayerAttack : MonoBehaviour
                 if(weapon_manager.getCurrentSelectedWeapon().bullet_type == WeaponBulletType.BULLET)
                 {
                     weapon_manager.getCurrentSelectedWeapon().ShootAnimation();
+                    BulletFired();
                 }
 
                 //Arrow or Spear

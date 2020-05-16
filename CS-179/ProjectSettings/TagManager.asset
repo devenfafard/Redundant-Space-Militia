@@ -4,8 +4,16 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Equipment
-  - Environment
+  - Fire
+  - Arrow
+  - Axe
+  - Crosshair
+  - FirstPerson Camera
+  - Look View
+  - Spear
+  - Enemy
+  - AlienGun
+  - AlienCamera
   layers:
   - Default
   - TransparentFX
@@ -15,9 +23,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Environment/Terrain
+  - Enemy
+  - Player
   - 
   - 
   - 
