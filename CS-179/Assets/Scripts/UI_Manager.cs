@@ -86,6 +86,7 @@ public class UI_Manager : Observer
         Debug.Log("Player died!");
         if(type == NotificationType.PLAYER_DEAD)
         {
+            LockMouse(false);
             TurnOnPanel(gameOverPanelGroup, mainMenuContainerCanvas);
         }
     }
