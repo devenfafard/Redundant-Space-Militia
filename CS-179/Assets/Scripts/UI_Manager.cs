@@ -6,37 +6,63 @@ using UnityEngine.SceneManagement;
 
 public class UI_Manager : MonoBehaviour
 {
-    [SerializeField] private GameObject mainMenuPanel = null;
-    [SerializeField] private GameObject creditsPanel  = null;
-    [SerializeField] private GameObject pausePanel    = null;
+    [SerializeField] private GameObject mainMenuPanel         = null;
+    [SerializeField] private GameObject creditsPanel          = null;
+    [SerializeField] private GameObject pausePanel            = null;
+    [SerializeField] private GameObject loadingPanel          = null;
+    [SerializeField] private Canvas mainMenuContainerCanvas   = null;
+
+    private CanvasGroup mainMenuPanelGroup                    = null;
+    private CanvasGroup creditsPanelGroup                     = null;
+    private CanvasGroup loadingPanelGroup                     = null;
+    private CanvasGroup pausePanelGroup                       = null;
 
     private void Awake()
     {
-        if (mainMenuPanel.gameObject != null)
+        DontDestroyOnLoad(this);
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        mainMenuContainerCanvas = this.gameObject.GetComponent<Canvas>();
+    }
+
+    private void Start()
+    {
+        // Initialize main menu object.
+        if (mainMenuPanel != null)
         {
-            mainMenuPanel.SetActive(true);
+            mainMenuPanelGroup = mainMenuPanel.GetComponent<CanvasGroup>();
+            TurnOnPanel(mainMenuPanelGroup, mainMenuContainerCanvas);
         }
-        if (creditsPanel.gameObject != null)
+
+        // Intialize credits panel object.
+        if (creditsPanel != null)
         {
-            creditsPanel.SetActive(false);
+            creditsPanelGroup  = creditsPanel.GetComponent<CanvasGroup>();
+            TurnOffPanel(creditsPanelGroup, mainMenuContainerCanvas);
         }
-        if(pausePanel.gameObject != null)
+
+        // Initialize pause menu object.
+        if(pausePanel != null)
         {
-            pausePanel.SetActive(false);
+            pausePanelGroup  = pausePanel.GetComponent<CanvasGroup>();
+            TurnOffPanel(pausePanelGroup, mainMenuContainerCanvas);
+        }
+
+        // Initialize loading menu object.
+        if(loadingPanel != null)
+        {
+            loadingPanelGroup = loadingPanel.GetComponent<CanvasGroup>();
+            TurnOffPanel(loadingPanelGroup, mainMenuContainerCanvas);
         }
     }
 
     private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.BackQuote))
+    {        
+        if(Input.GetKeyDown(KeyCode.BackQuote) && this.GetCurrentScene() == 1)
         {
-            // Pause
-            if(!pausePanel.activeInHierarchy)
+            if(pausePanelGroup.alpha == 0)
             {
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-                Time.timeScale = 0;
-                pausePanel.SetActive(true);
+                LockMouse(false);
+                TurnOnPanel(pausePanelGroup, mainMenuContainerCanvas);
             }
             else
             {
@@ -44,34 +70,86 @@ public class UI_Manager : MonoBehaviour
             }
         }
     }
-    public void OnPlayClicked()
+
+    #region [OBJECT AGNOSTIC FUNCTIONS]
+    private void TurnOnPanel(CanvasGroup panelGroup, Canvas panelCanvas)
     {
-        // Loads Level 1, which is at build index 1.
-        SceneManager.LoadScene(1, LoadSceneMode.Single);
+        panelGroup.alpha = 1;
+        panelGroup.interactable = true;
+        panelGroup.blocksRaycasts = true;
+        panelCanvas.sortingOrder = 15;
     }
 
-    public void OnCreditsClicked()
+    private void TurnOffPanel(CanvasGroup panelGroup, Canvas panelCanvas)
     {
-        creditsPanel.SetActive(true);
-        mainMenuPanel.SetActive(false);
+        panelGroup.alpha = 0;
+        panelGroup.interactable = false;
+        panelGroup.blocksRaycasts = false;
+        panelCanvas.sortingOrder = 0;
+    }
+
+    private void LockMouse(bool mouseState)
+    {
+        if (mouseState == true) // locked
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            Time.timeScale = 1;
+        }
+        else // unlocked
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            Time.timeScale = 0;
+        }
+    }
+
+    private int GetCurrentScene()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+        return currentScene.buildIndex;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if(scene.buildIndex == 1)
+        {
+            TurnOffPanel(loadingPanelGroup, mainMenuContainerCanvas);
+        }
     }
 
     public void OnQuitClicked()
     {
         Application.Quit();
     }
+    #endregion
+
+    #region [MAIN MENU FUNCTIONS]
+    public void OnPlayClicked()
+    {
+        TurnOnPanel(loadingPanelGroup, mainMenuContainerCanvas);
+        TurnOffPanel(mainMenuPanelGroup, mainMenuContainerCanvas);
+        SceneManager.LoadScene(1, LoadSceneMode.Single);
+    }
+
+    public void OnCreditsClicked()
+    {
+        TurnOnPanel(creditsPanelGroup, mainMenuContainerCanvas);
+        TurnOffPanel(mainMenuPanelGroup, mainMenuContainerCanvas);
+    }
 
     public void OnBackClicked()
     {
-        mainMenuPanel.SetActive(true);
-        creditsPanel.SetActive(false);
+        TurnOnPanel(mainMenuPanelGroup, mainMenuContainerCanvas);
+        TurnOffPanel(creditsPanelGroup, mainMenuContainerCanvas);
     }
+    #endregion
 
+    #region [PAUSE MENU FUNCTIONS]
     public void OnResumeClicked()
     {
-        Time.timeScale = 1;
-        pausePanel.SetActive(false);
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        LockMouse(true);
+        TurnOffPanel(pausePanelGroup, mainMenuContainerCanvas);
     }
+    #endregion
 }
