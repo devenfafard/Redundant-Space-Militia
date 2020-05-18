@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class HealthScript : MonoBehaviour
+public class HealthScript : Subject
 {
     private EnemyAnimation enemy_animator;
     private NavMeshAgent nav_agent;
@@ -33,6 +33,15 @@ public class HealthScript : MonoBehaviour
             player_stats = GetComponent<PlayerStats>();
         }
        
+    }
+
+    private void Update()
+    {
+        if (health <= 0f)
+        {
+            PlayerDied();
+            is_dead = true;
+        }
     }
 
     void Start()
@@ -74,7 +83,7 @@ public class HealthScript : MonoBehaviour
         }
 
     } // apply damage
-
+    
     void PlayerDied()
     {
         if (is_alien)
@@ -108,16 +117,17 @@ public class HealthScript : MonoBehaviour
 
         }
 
+     
         if (tag == Tags.PLAYER_TAG)
         {
-
-            Invoke("RestartGame", 3f);
+            Notify(NotificationType.PLAYER_DEAD);
+            //Invoke("RestartGame", 3f);
 
         }
         else
         {
 
-            Invoke("TurnOffGameObject", 3f);
+           Invoke("TurnOffGameObject", 3f);
 
         }
 
@@ -125,7 +135,7 @@ public class HealthScript : MonoBehaviour
 
     void RestartGame()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Level1");
+        //UnityEngine.SceneManagement.SceneManager.LoadScene("Level1");
     }
 
     void TurnOffGameObject()

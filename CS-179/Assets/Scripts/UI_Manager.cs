@@ -4,18 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class UI_Manager : MonoBehaviour
+public class UI_Manager : Observer
 {
     [SerializeField] private GameObject mainMenuPanel         = null;
     [SerializeField] private GameObject creditsPanel          = null;
     [SerializeField] private GameObject pausePanel            = null;
     [SerializeField] private GameObject loadingPanel          = null;
+    [SerializeField] private GameObject gameOverPanel         = null;
     [SerializeField] private Canvas mainMenuContainerCanvas   = null;
 
     private CanvasGroup mainMenuPanelGroup                    = null;
     private CanvasGroup creditsPanelGroup                     = null;
     private CanvasGroup loadingPanelGroup                     = null;
     private CanvasGroup pausePanelGroup                       = null;
+    private CanvasGroup gameOverPanelGroup                    = null;
 
     private void Awake()
     {
@@ -53,6 +55,13 @@ public class UI_Manager : MonoBehaviour
             loadingPanelGroup = loadingPanel.GetComponent<CanvasGroup>();
             TurnOffPanel(loadingPanelGroup, mainMenuContainerCanvas);
         }
+
+        // Initialize loading menu object.
+        if (gameOverPanel != null)
+        {
+            gameOverPanelGroup = gameOverPanel.GetComponent<CanvasGroup>();
+            TurnOffPanel(gameOverPanelGroup, mainMenuContainerCanvas);
+        }
     }
 
     private void Update()
@@ -70,8 +79,17 @@ public class UI_Manager : MonoBehaviour
             }
         }
     }
-
+    
     #region [OBJECT AGNOSTIC FUNCTIONS]
+    public override void OnNotify(NotificationType type)
+    {
+        Debug.Log("Player died!");
+        if(type == NotificationType.PLAYER_DEAD)
+        {
+            TurnOnPanel(gameOverPanelGroup, mainMenuContainerCanvas);
+        }
+    }
+
     private void TurnOnPanel(CanvasGroup panelGroup, Canvas panelCanvas)
     {
         panelGroup.alpha = 1;
@@ -115,6 +133,14 @@ public class UI_Manager : MonoBehaviour
         if(scene.buildIndex == 1)
         {
             TurnOffPanel(loadingPanelGroup, mainMenuContainerCanvas);
+            TurnOffPanel(gameOverPanelGroup, mainMenuContainerCanvas);
+
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if(player != null)
+            {
+                HealthScript healthManager = player.GetComponentInChildren<HealthScript>();
+                healthManager.AddObserver(this);
+            }
         }
     }
 
@@ -129,6 +155,7 @@ public class UI_Manager : MonoBehaviour
     {
         TurnOnPanel(loadingPanelGroup, mainMenuContainerCanvas);
         TurnOffPanel(mainMenuPanelGroup, mainMenuContainerCanvas);
+        TurnOffPanel(gameOverPanelGroup, mainMenuContainerCanvas);
         SceneManager.LoadScene(1, LoadSceneMode.Single);
     }
 
