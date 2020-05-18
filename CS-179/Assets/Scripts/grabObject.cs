@@ -11,6 +11,8 @@ public class grabObject : MonoBehaviour
     bool beingCarried = false;
     private bool colliding = false;
 
+    private int tempInt;
+
     private RaycastHit _hit = new RaycastHit();
 
 
@@ -43,6 +45,7 @@ public class grabObject : MonoBehaviour
             transform.parent = playerCam;
             beingCarried = true;
             canBeGrabbed = false;
+            globalVars.disarmed = true;
 
 
         }
@@ -57,6 +60,8 @@ public class grabObject : MonoBehaviour
                 transform.parent = null;
                 beingCarried = false;
                 GetComponent<Rigidbody>().AddForce(playerCam.forward * strength);
+                WeaponManager.reset = true;
+                globalVars.disarmed = false;
 
 
             }
@@ -66,6 +71,9 @@ public class grabObject : MonoBehaviour
                 GetComponent<Rigidbody>().isKinematic = false;
                 transform.parent = null;
                 beingCarried = false;
+
+                WeaponManager.reset = true;
+                globalVars.disarmed = false;
 
             }
 
