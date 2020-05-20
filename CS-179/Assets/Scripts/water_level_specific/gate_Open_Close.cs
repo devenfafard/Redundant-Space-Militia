@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class gate_Open_Close : MonoBehaviour
 {
-    public GameObject button;
-    public GameObject cubeObstruction; //very naive and inefficient solution
+    public GameObject button, button2;
+    public GameObject cubeObstruction, debris_blockage; //very naive and inefficient solution
     GameObject player;
     GameObject playerCam;
     RaycastHit _hit;
@@ -69,14 +69,14 @@ public class gate_Open_Close : MonoBehaviour
 
 
         if (dist <= 3f && Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out _hit, 10))
-            if (_hit.transform.gameObject == button.gameObject && Input.GetButtonDown("Use") && _open)
+            if ((_hit.transform.gameObject == button.gameObject || _hit.transform.gameObject == button2.gameObject) && Input.GetButtonDown("Use") && _open)
             {
                 _open = false;
                 StopCoroutine("Open");
                 lastRoutine = StartCoroutine("Close");
 
             }
-            else if (_hit.transform.gameObject == button.gameObject && Input.GetButtonDown("Use") && !_open)
+            else if ((_hit.transform.gameObject == button.gameObject || _hit.transform.gameObject == button2.gameObject) && Input.GetButtonDown("Use") && !_open)
             {
                 _open = true;
                 StopCoroutine("Close");
@@ -95,6 +95,13 @@ public class gate_Open_Close : MonoBehaviour
         if (collision.gameObject == cubeObstruction)
             StopCoroutine("Close");
 
+    }
+
+    void OnTriggerEnter(Collider collision)
+    {
+
+        if(collision.gameObject == debris_blockage)
+            StopCoroutine("Close");
     }
 
 

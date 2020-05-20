@@ -50,7 +50,7 @@ public class boxStay : MonoBehaviour
                 beingCarried = true;
                 canBeGrabbed = false;
 
-                
+                globalVars.disarmed = true;
 
             }
 
@@ -66,7 +66,10 @@ public class boxStay : MonoBehaviour
                     beingCarried = false;
                     GetComponent<Rigidbody>().AddForce(playerCam.transform.forward * strength);
 
-                    
+                    WeaponManager.reset = true;
+                    globalVars.disarmed = false;
+
+
 
                 }
                 else if (Input.GetMouseButtonDown(1))
@@ -77,7 +80,8 @@ public class boxStay : MonoBehaviour
                     transform.parent = null;
                     beingCarried = false;
 
-                   
+                    WeaponManager.reset = true;
+                    globalVars.disarmed = false;
 
                 }
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SpaceShip : MonoBehaviour
 {
@@ -28,6 +29,8 @@ public class SpaceShip : MonoBehaviour
     private bool terminal2_complete = false;
 
     private bool player_entered = false;
+
+    public string levelName; public GameObject playerController;
 
     void Start()
     {
@@ -62,7 +65,7 @@ public class SpaceShip : MonoBehaviour
 
     private void CheckTakeOff()
     {
-        if(player_entered && terminal1 && terminal2 && killCount >= 10)
+        if(player_entered && terminal1 && terminal2 && killCount >= 9)
 
         {
             print("Player Entered");
@@ -84,6 +87,11 @@ public class SpaceShip : MonoBehaviour
                     time = 0;
                     takeOffDone = true;
                 }
+            }
+            else {
+
+                SceneManager.LoadScene(levelName);
+
             }
         }
     }

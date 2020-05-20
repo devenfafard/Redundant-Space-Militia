@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ChickenCoup : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class ChickenCoup : MonoBehaviour
 
 
     private bool checkpoint_complete = false; //is the puzzle solved? 
+
+    public string levelName; public GameObject playerController;//test line
 
     // Start is called before the first frame update
     void Start()
@@ -64,6 +67,13 @@ public class ChickenCoup : MonoBehaviour
         if (chicken_1_Found && chicken_2_Found && chicken_3_Found && chicken_4_Found && chicken_5_Found)
         {
             checkpoint_complete = true; //the puzzle is solved
+
+            /*Vector3 rot = new Vector3(0f, -93.215f, 0f);
+            Vector3 loc = new Vector3(-19, 1, 10);
+            playerController.transform.eulerAngles = rot;
+            playerController.transform.position = loc;*/
+
+            SceneManager.LoadScene(levelName);
         }
     }
 
