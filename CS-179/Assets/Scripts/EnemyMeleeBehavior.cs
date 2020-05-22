@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public enum EnemyState { PATROL, FOLLOW, ATTACK }
+public enum EnemyState{ PATROL, FOLLOW, ATTACK}
 
 public class EnemyMeleeBehavior : MonoBehaviour
 {
@@ -32,34 +32,13 @@ public class EnemyMeleeBehavior : MonoBehaviour
 
     private Transform target;
     public GameObject attack_point;
-    private GameObject gun;
 
-    private Transform enemy;
-
-    [SerializeField]
-    private float enemy_damage = 5f;
-
-    [SerializeField]
-    private AudioSource shoot_sound;
-
-    [SerializeField]
-    private GameObject plasma_bullet;
-
-    [SerializeField]
-    private Transform plasma_bullet_start_position;
-
-    private Rigidbody bullet;
-    public float bullet_speed = 30f;
-    public float deactivate_timer = 3f;
-
-    void Awake()
+    private void Awake()
     {
         enemy_Anima = GetComponent<EnemyAnimation>();
         navAgent = GetComponent<NavMeshAgent>();
-        gun = GameObject.FindWithTag("AlienGun");
+
         target = GameObject.FindWithTag("Player").transform;
-        enemy = GetComponent<Transform>();
-        bullet = GetComponent<Rigidbody>();
     }
 
 
@@ -88,7 +67,6 @@ public class EnemyMeleeBehavior : MonoBehaviour
 
         if (enemy_State == EnemyState.ATTACK)
         {
-            enemy.LookAt(target);
             Attack();
         }
 
@@ -101,7 +79,7 @@ public class EnemyMeleeBehavior : MonoBehaviour
 
         patrol_timer += Time.deltaTime;
 
-        if (patrol_timer > patrol_time_limit)
+        if(patrol_timer > patrol_time_limit)
         {
             NewRandomDestination();
 
@@ -184,35 +162,17 @@ public class EnemyMeleeBehavior : MonoBehaviour
         //attack once for the enemy
         if (attack_timer > wait_before_attack)
         {
-
             enemy_Anima.Attack();
-
-            RaycastHit hit;
-            Vector3 direction = target.position - enemy.position;
-
-            if (Physics.Raycast(plasma_bullet_start_position.position, direction, out hit))
-            {
-                GameObject plasma = GameObject.Instantiate(plasma_bullet, plasma_bullet_start_position.position, transform.rotation);
-                plasma.GetComponent<Rigidbody>().AddForce(direction * bullet_speed);
-                
-                if (hit.collider.gameObject.tag == Tags.PLAYER_TAG)
-                {
-                    hit.transform.GetComponent<HealthScript>().ApplyDamage(enemy_damage);
-                }
-
-            }
 
             attack_timer = 0f;
 
-            shoot_sound.Play();
+            //can play sound here for attack
         }
 
         if (Vector3.Distance(transform.position, target.position) > attack_distance + follow_after_attack_dist)
         {
             enemy_State = EnemyState.FOLLOW;
         }
-
-
 
     }
 
@@ -247,11 +207,6 @@ public class EnemyMeleeBehavior : MonoBehaviour
     public EnemyState Enemy_State
     {
         get; set;
-    }
-
-    void playShootSound()
-    {
-        
     }
 
 

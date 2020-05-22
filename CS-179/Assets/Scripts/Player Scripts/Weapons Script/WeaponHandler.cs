@@ -26,7 +26,7 @@ public enum WeaponBulletType
 public class WeaponHandler : MonoBehaviour
 {
     [SerializeField]
-    public GameObject muzzleFlash;
+    public ParticleSystem muzzleFlash;
 
     [SerializeField]
     private AudioSource shoot_sound, reload_sound;
@@ -53,15 +53,21 @@ public class WeaponHandler : MonoBehaviour
         animator.SetBool(AnimationTags.AIM_PARAMETER, can_aim);
     }
 
-    void turnOnMuzzleFlash()
+    //void turnOnMuzzleFlash()
+    //{
+    //    muzzleFlash.SetActive(true);
+    //}
+
+    //void turnOffMuzzleFlash()
+    //{
+    //    muzzleFlash.SetActive(false);
+    //}
+    public void playMuzzleFlash()
     {
-        muzzleFlash.SetActive(true);
+        muzzleFlash.Play();
     }
 
-    void turnOffMuzzleFlash()
-    {
-        muzzleFlash.SetActive(false);
-    }
+
 
     void playShootSound()
     {

@@ -53,6 +53,7 @@ public class PlayerAttack : MonoBehaviour
             {
                 next_time_to_fire = Time.time + 1f / fire_rate;
                 weapon_manager.getCurrentSelectedWeapon().ShootAnimation();
+                weapon_manager.getCurrentSelectedWeapon().playMuzzleFlash();
             }
 
         }
@@ -72,6 +73,7 @@ public class PlayerAttack : MonoBehaviour
                 {
                     weapon_manager.getCurrentSelectedWeapon().ShootAnimation();
                     BulletFired();
+                    weapon_manager.getCurrentSelectedWeapon().playMuzzleFlash();
                 }
 
                 //Arrow or Spear

@@ -4,20 +4,18 @@ using UnityEngine;
 
 public class OpenGate : MonoBehaviour
 {
+
+    private bool complete = false;
     public GameObject hinge1;
 
     public GameObject hinge2;
 
     public GameObject trigger;
 
-    public GameObject player;
-
-    private int alien_Deaths;
-
-    bool complete_Kills;
-
     Animator left_door;
     Animator right_door;
+
+   
 
     void Start()
     {
@@ -25,23 +23,18 @@ public class OpenGate : MonoBehaviour
         right_door = hinge2.GetComponent<Animator>();
     }
 
-    void Update()
-    {
-        CheckKills();
-    }
-
-
     void OnTriggerEnter(Collider coll)
     {
-        if (coll.gameObject.tag == "Player" && complete_Kills)
+        if (coll.gameObject.tag == "Player")
         {
             OpenDoor(true);
+            complete = true;
         }
     }
 
     void OnTriggerExit(Collider coll)
     {
-        if (coll.gameObject.tag == "Player" && complete_Kills)
+        if (coll.gameObject.tag == "Player")
         {
             OpenDoor(false);
         }
@@ -53,29 +46,17 @@ public class OpenGate : MonoBehaviour
         right_door.SetBool("open", state);
     }
 
-    private void CheckKills()
-    {
-        if (alien_Deaths == 5)
-        {
-            complete_Kills = true;
-        }
-
-    }
-
-    public void UpdateKills()
-    {
-        ++alien_Deaths;
-        print(alien_Deaths);
-    }
-
-    public int GetAlienKills()
-    {
-        return alien_Deaths;
-    }
-
     public bool GetSecondCheckpoint()
     {
-        return complete_Kills;
+        return complete;
+    }
+
+    //wait are we really having the gate count the kills?
+    public int GetAlienKills()
+    {
+        //TODO implement way to count and store enemy deaths
+        //placeholder kill count return 10
+        return 10;
     }
 
 }
