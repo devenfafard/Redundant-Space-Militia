@@ -36,6 +36,11 @@ public class ChickenCoup : MonoBehaviour
     void Update()
     {
         check_Chickens();
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            chicken_1_Found = chicken_2_Found = chicken_3_Found = chicken_4_Found = chicken_5_Found = true;
+        }
     }
 
     private void OnTriggerEnter(Collider chicken)
@@ -73,7 +78,7 @@ public class ChickenCoup : MonoBehaviour
             playerController.transform.eulerAngles = rot;
             playerController.transform.position = loc;*/
 
-            SceneManager.LoadScene(levelName);
+            //SceneManager.LoadScene(levelName);
         }
     }
 

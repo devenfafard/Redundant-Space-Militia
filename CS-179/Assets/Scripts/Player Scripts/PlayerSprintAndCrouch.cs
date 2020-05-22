@@ -26,7 +26,7 @@ public class PlayerSprintAndCrouch : MonoBehaviour
     private PlayerStats player_stats;
 
     private float sprint_value = 100f;
-    public float sprint_threshold = 1f;
+    public float sprint_threshold = 5f;
 
     private void Awake()
     {

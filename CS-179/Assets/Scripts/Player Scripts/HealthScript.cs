@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class HealthScript : MonoBehaviour
+public class HealthScript : Subject
 {
     private EnemyAnimation enemy_animator;
     private NavMeshAgent nav_agent;
     private EnemyMeleeBehavior enemy_controller;
 
     public float health = 100f;
+    public float health_threshold = 1f;
     public bool is_player;
     public bool is_alien;
     private bool is_dead;
@@ -35,6 +36,26 @@ public class HealthScript : MonoBehaviour
        
     }
 
+    private void Update()
+    {
+        if (health <= 0f)
+        {
+            PlayerDied();
+            is_dead = true;
+        }
+        else
+        {
+            if (health != 100f && !is_dead) { 
+                health += (health_threshold / 2) * Time.deltaTime;
+                player_stats.DisplayHealthStats(health);
+                if (health >= 100f)
+                {
+                    health = 100f;
+                }
+            }
+        }
+    }
+
     void Start()
     {
         gate = GameObject.FindGameObjectWithTag("Canyon Gate");
@@ -48,23 +69,6 @@ public class HealthScript : MonoBehaviour
 
         health = health - damage;
 
-        if (is_player)
-        {
-            
-            player_stats.DisplayHealthStats(health);
-        }
-
-        
-        if (is_alien)
-        {
-            if (enemy_controller.Enemy_State == EnemyState.PATROL)
-            {
-                enemy_controller.chase_distance = 45f;
-            }
-        }
-        
-        
-
         if (health <= 0f)
         {
 
@@ -73,8 +77,24 @@ public class HealthScript : MonoBehaviour
             is_dead = true;
         }
 
-    } // apply damage
+        if (is_player)
+        {
+            player_stats.DisplayHealthStats(health);
+                
+        }
 
+
+        if (is_alien)
+        {
+            if (enemy_controller.Enemy_State == EnemyState.PATROL)
+            {
+                enemy_controller.chase_distance = 45f;
+            }
+        }
+
+
+    } // apply damage
+    
     void PlayerDied()
     {
         if (is_alien)
@@ -108,16 +128,17 @@ public class HealthScript : MonoBehaviour
 
         }
 
+     
         if (tag == Tags.PLAYER_TAG)
         {
-
-            Invoke("RestartGame", 3f);
+            Notify(NotificationType.PLAYER_DEAD);
+            //Invoke("RestartGame", 3f);
 
         }
         else
         {
 
-            Invoke("TurnOffGameObject", 3f);
+           Invoke("TurnOffGameObject", 3f);
 
         }
 
@@ -125,7 +146,7 @@ public class HealthScript : MonoBehaviour
 
     void RestartGame()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Level1");
+        //UnityEngine.SceneManagement.SceneManager.LoadScene("Level1");
     }
 
     void TurnOffGameObject()

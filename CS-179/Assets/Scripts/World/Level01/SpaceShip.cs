@@ -65,8 +65,8 @@ public class SpaceShip : MonoBehaviour
 
     private void CheckTakeOff()
     {
-        if(player_entered && terminal1 && terminal2 && killCount >= 9)
 
+        if(player_entered && terminal1 && terminal2 && killCount >= 9)
         {
             print("Player Entered");
             mainCamera.transform.position = CameraPosition.position;
