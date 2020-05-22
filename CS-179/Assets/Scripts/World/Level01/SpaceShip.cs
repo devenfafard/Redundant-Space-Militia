@@ -59,7 +59,6 @@ public class SpaceShip : MonoBehaviour
         {
             player_entered = true;
             takeOff(false);
-
         }
     }
 

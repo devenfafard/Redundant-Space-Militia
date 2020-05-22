@@ -9,7 +9,7 @@ public class waterPlayerPhys : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -26,18 +26,18 @@ public class waterPlayerPhys : MonoBehaviour
             if (Input.GetKey("space"))
             {
 
-                GetComponent<CharacterController>().Move(-Physics.gravity * .0135f);
+                GetComponent<CharacterController>().Move(-Physics.gravity * .0045f);
                 //GetComponent<RigidBody>().velocity = (-Physics.gravity * gravMultiplier);
                 //GetComponent<Rigidbody>().AddForce(-Physics.gravity * gravMultiplier * .9f);
             }
             else if (Input.GetKey("left ctrl"))
             {
-                GetComponent<CharacterController>().Move(Physics.gravity * .01675f);
+                GetComponent<CharacterController>().Move(Physics.gravity * .0035f);
                 //GetComponent<Rigidbody>().velocity = (Physics.gravity * gravMultiplier *1.1f);
                 //GetComponent<Rigidbody>().AddForce(Physics.gravity * gravMultiplier *.9f);
             }
 
-            GetComponent<CharacterController>().Move(-Physics.gravity * .0205f);
+            GetComponent<CharacterController>().Move(-Physics.gravity * .0015f);
             //GetComponent<Rigidbody>().AddForce(-Physics.gravity * .505f);
 
         }

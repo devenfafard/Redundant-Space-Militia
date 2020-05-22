@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerUINotifications : MonoBehaviour
 {
@@ -37,17 +38,24 @@ public class PlayerUINotifications : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        first_gate = GameObject.FindGameObjectWithTag("First Gate");
-        second_gate = GameObject.FindGameObjectWithTag("Canyon Gate");
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            first_gate = GameObject.FindGameObjectWithTag("First Gate");
+            second_gate = GameObject.FindGameObjectWithTag("Canyon Gate");
+        }
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        DisplayGameIntro();
-        CheckFirstGate();
-        CheckSecondGate();
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            DisplayGameIntro();
+            CheckFirstGate();
+            CheckSecondGate();
+        }
+        
     }
 
     private void CheckFirstGate()
