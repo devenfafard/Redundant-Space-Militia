@@ -4,7 +4,14 @@ using UnityEngine;
 
 public enum NotificationType
 {
-    PLAYER_DEAD
+    QUIT_GAME,
+    START_GAME,
+    PLAYER_DEAD,
+    UI_LEVEL1_START,
+    UI_LEVEL2_START,
+    LEVEL1_COMPLETE,
+    LEVEL2_COMPLETE,
+    GLOBAL_GAME_OVER
 };
 
 public abstract class Observer : MonoBehaviour
