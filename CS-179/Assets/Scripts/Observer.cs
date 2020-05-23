@@ -7,11 +7,14 @@ public enum NotificationType
     QUIT_GAME,
     START_GAME,
     PLAYER_DEAD,
-    UI_LEVEL1_START,
-    UI_LEVEL2_START,
+    LEVEL1_START,
+    LEVEL2_START,
+    INTRO_DONE,
+    FIRST_CHECKPOINT_DONE,
+    SECOND_CHECKPOINT_DONE,
     LEVEL1_COMPLETE,
     LEVEL2_COMPLETE,
-    GLOBAL_GAME_OVER
+    GAME_OVER
 };
 
 public abstract class Observer : MonoBehaviour

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIManager : Observer
 {
@@ -12,6 +13,7 @@ public class UIManager : Observer
     [SerializeField] private GameObject loadingPanel = null;
     [SerializeField] private GameObject gameOverPanel = null;
     [SerializeField] private GameObject winPanel = null;
+    [SerializeField] private GameObject hudPanel = null;
     
     private CanvasGroup mainMenuPanelGroup = null;
     private CanvasGroup creditsPanelGroup = null;
@@ -19,6 +21,13 @@ public class UIManager : Observer
     private CanvasGroup pausePanelGroup = null;
     private CanvasGroup gameOverPanelGroup = null;
     private CanvasGroup winPanelGroup = null;
+    private CanvasGroup hudPanelGroup = null;
+
+    [SerializeField] private TextMeshProUGUI notificationBody = null;
+
+    [SerializeField] private string introText;
+    [SerializeField] private string firstCheckpointText;
+    [SerializeField] private string secondCheckpointText;
 
     private void Awake() // Make the UI system persist between scenes + subscribe UIManager to GameManager updates.
     {
@@ -69,6 +78,13 @@ public class UIManager : Observer
         {
             winPanelGroup = winPanel.GetComponent<CanvasGroup>();
             TurnOffPanel(winPanelGroup, containerCanvas);
+        }
+
+        // Initialize the HUD object.
+        if (hudPanel != null)
+        {
+            hudPanelGroup = hudPanel.GetComponent<CanvasGroup>();
+            TurnOffPanel(hudPanelGroup, containerCanvas);
         }
     }
 
@@ -126,23 +142,51 @@ public class UIManager : Observer
     {
         switch(type)
         {
-            case NotificationType.UI_LEVEL1_START:
+            case NotificationType.LEVEL1_START:
                 TurnOffPanel(loadingPanelGroup, containerCanvas);
                 TurnOffPanel(gameOverPanelGroup, containerCanvas);
                 TurnOffPanel(winPanelGroup, containerCanvas);
-                // TODO : Display level 1 UI notification
+                TurnOnPanel(hudPanelGroup, containerCanvas);
+
+                if(notificationBody != null)
+                {
+                    notificationBody.text = introText;
+                    StartCoroutine(ClearTextAfterSeconds(notificationBody, 5.0f));
+                }                
                 break;
-            case NotificationType.UI_LEVEL2_START:
+            case NotificationType.FIRST_CHECKPOINT_DONE:
+                notificationBody.text = firstCheckpointText;
+                if (notificationBody != null)
+                {
+                    notificationBody.text = firstCheckpointText;
+                    StartCoroutine(ClearTextAfterSeconds(notificationBody, 5.0f));
+                }
+                break;
+            case NotificationType.SECOND_CHECKPOINT_DONE:
+                notificationBody.text = secondCheckpointText;
+                if (notificationBody != null)
+                {
+                    notificationBody.text = secondCheckpointText;
+                    StartCoroutine(ClearTextAfterSeconds(notificationBody, 5.0f));
+                }
+                break;
+            case NotificationType.LEVEL2_START:
                 TurnOffPanel(loadingPanelGroup, containerCanvas);
                 TurnOffPanel(gameOverPanelGroup, containerCanvas);
                 TurnOffPanel(winPanelGroup, containerCanvas);
                 // TODO : Display level 2 UI notification
                 break;
-            case NotificationType.GLOBAL_GAME_OVER:
+            case NotificationType.GAME_OVER:
                 GameManager.Instance.LockMouse(false);
                 TurnOnPanel(gameOverPanelGroup, containerCanvas);
                 break;
         }
+    }
+
+    private IEnumerator ClearTextAfterSeconds(TextMeshProUGUI textObject, float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        textObject.text = "";
     }
    
     private void TurnOnPanel(CanvasGroup panelGroup, Canvas panelCanvas)

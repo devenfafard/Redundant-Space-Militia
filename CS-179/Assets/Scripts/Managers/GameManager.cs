@@ -65,10 +65,10 @@ public class GameManager : Subject
         switch (scene.buildIndex)
         {
             case 1:
-                Notify(NotificationType.UI_LEVEL1_START);
+                Notify(NotificationType.LEVEL1_START);
                 break;
             case 2:
-                Notify(NotificationType.UI_LEVEL2_START);
+                Notify(NotificationType.LEVEL2_START);
                 break;
         }
     }
