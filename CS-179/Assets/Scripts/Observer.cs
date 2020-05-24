@@ -4,9 +4,10 @@ using UnityEngine;
 
 public enum NotificationType
 {
-    QUIT_GAME,
     START_GAME,
+    QUIT_GAME,
     PLAYER_DEAD,
+    ENEMY_DEAD,
     LEVEL1_START,
     LEVEL2_START,
     INTRO_DONE,

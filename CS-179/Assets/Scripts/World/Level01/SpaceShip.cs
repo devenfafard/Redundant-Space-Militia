@@ -30,7 +30,7 @@ public class SpaceShip : MonoBehaviour
 
     private bool player_entered = false;
 
-    public string levelName; public GameObject playerController;
+    public GameObject playerController;
 
     void Start()
     {
@@ -47,7 +47,7 @@ public class SpaceShip : MonoBehaviour
     {
         terminal1_complete = terminal1.GetComponent<TerminalBase1>().checkTerminalUsed();
         terminal2_complete = terminal2.GetComponent<TerminalBase2>().checkTerminalUsed();
-        killCount = kills.GetComponent<OpenGate>().GetAlienKills();
+        //killCount = kills.GetComponent<OpenGate>().GetAlienKills();
 
         CheckTakeOff();
 
@@ -89,7 +89,7 @@ public class SpaceShip : MonoBehaviour
             }
             else {
 
-                SceneManager.LoadScene(levelName);
+                SceneManager.LoadScene(2);
 
             }
         }

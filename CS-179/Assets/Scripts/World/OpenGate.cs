@@ -5,33 +5,22 @@ using UnityEngine;
 public class OpenGate : MonoBehaviour
 {
     public GameObject hinge1;
-
     public GameObject hinge2;
-
     public GameObject trigger;
-
     public GameObject player;
 
-    private int alien_Deaths;
-
-    bool complete_Kills;
+    private bool complete_Kills;
 
     Animator left_door;
     Animator right_door;
 
-    void Start()
+    private void Start()
     {
         left_door = hinge1.GetComponent<Animator>();
         right_door = hinge2.GetComponent<Animator>();
     }
 
-    void Update()
-    {
-        CheckKills();
-    }
-
-
-    void OnTriggerEnter(Collider coll)
+    private void OnTriggerEnter(Collider coll)
     {
         if (coll.gameObject.tag == "Player" && complete_Kills)
         {
@@ -39,7 +28,7 @@ public class OpenGate : MonoBehaviour
         }
     }
 
-    void OnTriggerExit(Collider coll)
+    private void OnTriggerExit(Collider coll)
     {
         if (coll.gameObject.tag == "Player" && complete_Kills)
         {
@@ -47,35 +36,9 @@ public class OpenGate : MonoBehaviour
         }
     }
 
-    void OpenDoor(bool state)
+    private void OpenDoor(bool state)
     {
         left_door.SetBool("open", state);
         right_door.SetBool("open", state);
     }
-
-    private void CheckKills()
-    {
-        if (alien_Deaths == 4)
-        {
-            complete_Kills = true;
-        }
-
-    }
-
-    public void UpdateKills()
-    {
-        ++alien_Deaths;
-        print(alien_Deaths);
-    }
-
-    public int GetAlienKills()
-    {
-        return alien_Deaths;
-    }
-
-    public bool GetSecondCheckpoint()
-    {
-        return complete_Kills;
-    }
-
 }
