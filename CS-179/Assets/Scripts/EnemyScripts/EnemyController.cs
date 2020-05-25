@@ -95,6 +95,7 @@ public class EnemyController : Subject
         if(health <= 0.0f)
         {
             Notify(NotificationType.ENEMY_DEAD);
+            this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
             navAgent.velocity = Vector3.zero;
             navAgent.isStopped = true;
             enemy_Anima.Dead();
