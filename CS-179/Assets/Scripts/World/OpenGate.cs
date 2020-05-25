@@ -14,6 +14,11 @@ public class OpenGate : MonoBehaviour
     Animator left_door;
     Animator right_door;
 
+    public void SetCompleteKills(bool _complete_Kills)
+    {
+        complete_Kills = _complete_Kills;
+    }
+
     private void Start()
     {
         left_door = hinge1.GetComponent<Animator>();

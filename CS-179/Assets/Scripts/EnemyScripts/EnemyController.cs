@@ -23,19 +23,19 @@ public class EnemyController : Subject
     private float run_speed = 2.0f;
     private float chase_distance = 6.0f;
     private float current_chase_dist = 0.0f;
-    private float attack_distance = 0.5f;
-    private float follow_after_attack_dist = 2.0f;
+    private float attack_distance = 3.0f;
+    private float follow_after_attack_dist = 5.0f;
     private float patrol_radius_min = 2.0f;
     private float patrol_radius_max = 20.0f;
     private float patrol_time_limit = 5.0f;
     private float patrol_timer = 0.0f;
     private float attack_timer = 0.0f;
-    private float wait_before_attack = 2f;
+    private float wait_before_attack = 2.0f;
 
     private float health = 100.0f;
 
     private Rigidbody bullet;
-    private float bullet_speed = 30f;
+    private float bullet_speed = 100f;
     private float deactivate_timer = 3f;
 
     public EnemyState Enemy_State
@@ -63,6 +63,10 @@ public class EnemyController : Subject
 
     private void Update()
     {
+        Debug.DrawLine(transform.position, new Vector3(transform.position.x + attack_distance,
+                                                       transform.position.y + attack_distance,
+                                                       transform.position.z + attack_distance), Color.red);
+
         if (enemy_State == EnemyState.PATROL)
         {
             Patrol();
@@ -85,10 +89,16 @@ public class EnemyController : Subject
     public void ApplyDamage(float damage)
     {
         health = health - damage;
+
+        print("Enemy Health : " + health);
         
         if(health <= 0.0f)
         {
             Notify(NotificationType.ENEMY_DEAD);
+            navAgent.velocity = Vector3.zero;
+            navAgent.isStopped = true;
+            enemy_Anima.Dead();
+            StartCoroutine(CleanUp(3.0f));
         }
 
         if (enemy_State == EnemyState.PATROL)
@@ -125,7 +135,7 @@ public class EnemyController : Subject
         if (Vector3.Distance(transform.position, target.position) <= chase_distance)
         {
             enemy_Anima.Walk(false);
-            enemy_State = EnemyState.FOLLOW;
+            enemy_State = EnemyState.ATTACK;
 
             //we can play audio for enemy here if you want to play something
             //when enemy finds the player
@@ -174,7 +184,6 @@ public class EnemyController : Subject
             {
                 chase_distance = current_chase_dist;
             }
-
         }
     }
 
@@ -188,7 +197,6 @@ public class EnemyController : Subject
         //attack once for the enemy
         if (attack_timer > wait_before_attack)
         {
-
             enemy_Anima.Attack();
 
             RaycastHit hit;
@@ -201,12 +209,13 @@ public class EnemyController : Subject
 
                 if (hit.collider.gameObject.GetComponent<PlayerController>() != null)
                 {
+                    print("GOTEM");
                     hit.collider.gameObject.GetComponent<PlayerController>().ApplyDamage(enemy_damage);
                 }
             }
 
             attack_timer = 0.0f;
-            shoot_sound.Play();
+            //shoot_sound.Play();
         }
 
         if (Vector3.Distance(transform.position, target.position) > attack_distance + follow_after_attack_dist)
@@ -229,6 +238,12 @@ public class EnemyController : Subject
         NavMesh.SamplePosition(rand_direction, out navInside, rand_Radius, -1);
 
         navAgent.SetDestination(navInside.position);
+    }
+
+    private IEnumerator CleanUp(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        GameObject.Destroy(this.gameObject);
     }
 
     private void TurnOnAttackPoint()

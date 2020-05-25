@@ -6,9 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : Observer
 {
     private UIController uiController = null;
-
     private EnemyController[] enemies = null;
-
+    private OpenGate secondGate = null;
     private int enemyKillCount = 0;
 
     #region SINGLETON IMPLEMENTATION
@@ -60,9 +59,10 @@ public class GameManager : Observer
         // TODO - update health + stamina UI
 
         // Dev workaround to demo level 2
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.X))
         {
-            //SceneManager.LoadScene(2);
+            uiController.OnNotify(NotificationType.SECOND_CHECKPOINT_DONE);
+            secondGate.SetCompleteKills(true);
         }
     }
 
@@ -85,6 +85,17 @@ public class GameManager : Observer
             case NotificationType.FIRST_CHECKPOINT_DONE:
                 uiController.OnNotify(NotificationType.FIRST_CHECKPOINT_DONE);
                 break;
+
+            case NotificationType.ENEMY_DEAD:
+                enemyKillCount++;
+                print("ENEMIES KILLED : " + enemyKillCount);
+
+                if(enemyKillCount == 4)
+                {
+                    uiController.OnNotify(NotificationType.SECOND_CHECKPOINT_DONE);
+                    secondGate.SetCompleteKills(true);
+                }
+                break;
         }
     }
 
@@ -94,9 +105,17 @@ public class GameManager : Observer
         {
             case 1:
                 uiController.OnNotify(NotificationType.LEVEL1_START);
+                Debug.Log("[Scene 1 Loaded]");
                 ChickenCoup firstPuzzle = GameObject.FindObjectOfType<ChickenCoup>();
                 firstPuzzle.AddObserver(this);
+                secondGate = GameObject.FindObjectOfType<OpenGate>();
                 enemies = GameObject.FindObjectsOfType<EnemyController>();
+                print(enemies.Length);
+                foreach(EnemyController enemy in enemies)
+                {
+                    print(enemy.name);
+                    enemy.AddObserver(this);
+                }
                 break;
             case 2:
                 uiController.OnNotify(NotificationType.LEVEL2_START);

@@ -167,6 +167,7 @@ public class PlayerController : Subject
     #region [HEALTH]
     public void ApplyDamage(float damage)
     {
+        print("Player health : " + health);
         health = health - damage;
 
         if (health <= 0.0f)
@@ -438,7 +439,7 @@ public class PlayerController : Subject
 
         if (Physics.Raycast(main_camera.transform.position, main_camera.transform.forward, out hit))
         {
-            if (hit.transform.tag == Tags.ENEMY_TAG)
+            if (hit.transform.GetComponent<EnemyController>() != null)
             {
                 hit.transform.GetComponent<EnemyController>().ApplyDamage(damage);
             }
