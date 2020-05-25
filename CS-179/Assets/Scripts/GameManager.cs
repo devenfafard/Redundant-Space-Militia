@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : Observer
 {
     private UIController uiController = null;
+    private PlayerController player = null;
     private EnemyController[] enemies = null;
     private OpenGate secondGate = null;
     private int enemyKillCount = 0;
@@ -56,9 +57,12 @@ public class GameManager : Observer
 
     private void Update()
     {
-        // TODO - update health + stamina UI
-
-        // Dev workaround to demo level 2
+        if(FetchCurrentSceneIndex() != 0)
+        {
+            uiController.DisplayHealthStats(player.GetHealth());
+            uiController.DisplayStaminaStats(player.GetStamina());
+        }
+        
         if (Input.GetKeyDown(KeyCode.X))
         {
             uiController.OnNotify(NotificationType.SECOND_CHECKPOINT_DONE);
@@ -79,7 +83,7 @@ public class GameManager : Observer
                 break;
 
             case NotificationType.PLAYER_DEAD:
-                uiController.OnNotify(NotificationType.PLAYER_DEAD);
+                uiController.OnNotify(NotificationType.GAME_OVER);
                 break;
 
             case NotificationType.FIRST_CHECKPOINT_DONE:
@@ -110,6 +114,8 @@ public class GameManager : Observer
                 firstPuzzle.AddObserver(this);
                 secondGate = GameObject.FindObjectOfType<OpenGate>();
                 enemies = GameObject.FindObjectsOfType<EnemyController>();
+                player = GameObject.FindObjectOfType<PlayerController>();
+                player.AddObserver(this);
                 print(enemies.Length);
                 foreach(EnemyController enemy in enemies)
                 {
@@ -119,6 +125,9 @@ public class GameManager : Observer
                 break;
             case 2:
                 uiController.OnNotify(NotificationType.LEVEL2_START);
+                Debug.Log("[Scene 2 Loaded]");
+                player = GameObject.FindObjectOfType<PlayerController>();
+                enemies = GameObject.FindObjectsOfType<EnemyController>();
                 break;
         }
     }

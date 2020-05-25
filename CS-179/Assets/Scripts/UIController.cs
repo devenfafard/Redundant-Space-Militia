@@ -14,6 +14,8 @@ public class UIController : Subject
     [SerializeField] private GameObject gameOverPanel = null;
     [SerializeField] private GameObject winPanel = null;
     [SerializeField] private GameObject hudPanel = null;
+    [SerializeField] private Image health_stats = null;
+    [SerializeField] private Image stamina_stats = null;
 
     private CanvasGroup mainMenuPanelGroup = null;
     private CanvasGroup creditsPanelGroup = null;
@@ -181,9 +183,22 @@ public class UIController : Subject
 
             case NotificationType.GAME_OVER:
                 LockMouse(false);
+                TurnOffPanel(hudPanelGroup, containerCanvas);
                 TurnOnPanel(gameOverPanelGroup, containerCanvas);
                 break;
         }
+    }
+
+    public void DisplayHealthStats(float healthValue)
+    {
+        healthValue /= 100f;
+        health_stats.fillAmount = healthValue;
+    }
+
+    public void DisplayStaminaStats(float staminaValue)
+    {
+        staminaValue /= 100f;
+        stamina_stats.fillAmount = staminaValue;
     }
 
     private void LockMouse(bool mouseState) // Locks / unlocks the mouse + hard pauses the game.

@@ -24,5 +24,4 @@ public class PlayerStats : MonoBehaviour
 
         stamina_stats.fillAmount = staminaValue;
     }
-
 }

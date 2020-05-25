@@ -89,8 +89,7 @@ public class SpaceShip : MonoBehaviour
             }
             else {
 
-                SceneManager.LoadScene(2);
-
+               // SceneManager.LoadScene(2);
             }
         }
     }
@@ -99,6 +98,4 @@ public class SpaceShip : MonoBehaviour
     {
         TakeOff.SetBool("Take Off", state);
     }
-
-
 }

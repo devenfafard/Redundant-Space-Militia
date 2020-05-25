@@ -2350,7 +2350,7 @@ MonoBehaviour:
     spaceCount: 0
     wordCount: 1
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -3118,7 +3118,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 64
+  m_firstOverflowCharacterIndex: 39
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -3147,7 +3147,7 @@ MonoBehaviour:
     spaceCount: 15
     wordCount: 16
     linkCount: 0
-    lineCount: 4
+    lineCount: 6
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -4199,6 +4199,8 @@ MonoBehaviour:
   gameOverPanel: {fileID: 948282278}
   winPanel: {fileID: 1857328282}
   hudPanel: {fileID: 99124658}
+  health_stats: {fileID: 8040961093071518393}
+  stamina_stats: {fileID: 3621314884030464211}
   notificationBody: {fileID: 1384907748}
   introText: Something about chickens
   firstCheckpointText: First checkpoint complete

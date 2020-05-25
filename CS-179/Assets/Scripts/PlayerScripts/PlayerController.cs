@@ -74,13 +74,11 @@ public class PlayerController : Subject
         
         zoomCameraAnimator = transform.Find(Tags.LOOK_VIEW).transform.Find(Tags.ZOOM_CAMERA).GetComponent<Animator>();
         crosshair = GameObject.FindWithTag(Tags.CROSSHAIR);
-        //main_camera = Camera.main;
 
         current_weapon_index = 0;
         weapons[current_weapon_index].gameObject.SetActive(true);
 
         disarmed = false;
-        //disarmedMiddleMan = false;
     }
     
     private void Start()
@@ -175,6 +173,16 @@ public class PlayerController : Subject
             Notify(NotificationType.PLAYER_DEAD);
         }
     }
+
+    public float GetHealth()
+    {
+        return this.health;
+    }
+
+    public float GetStamina()
+    {
+        return this.sprint_value;
+    }
     #endregion
 
     #region [MOVEMENT FUNCTIONS]
@@ -258,15 +266,12 @@ public class PlayerController : Subject
                 player_footstep.volume_max = walk_volume_max;
                 player_footstep.step_distance = walk_step_distance;
             }
-
-            // TODO - update UI player_stats.DisplayStaminaStats(sprint_value);
         }
         else
         {
             if (sprint_value != 100.0f)
             {
                 sprint_value += (sprint_threshold / 2) * Time.deltaTime;
-                // TODO UI - player_stats.DisplayStaminaStats(sprint_value);
                 if (sprint_value > 100.0f)
                 {
                     sprint_value = 100.0f;
