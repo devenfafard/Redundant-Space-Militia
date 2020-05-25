@@ -50,18 +50,19 @@ public class GameManager : Observer
     {
         DontDestroyOnLoad(this);
         SceneManager.sceneLoaded += OnSceneLoaded;
+
         uiController = GameObject.FindObjectOfType<UIController>();
-        enemies = GameObject.FindObjectsOfType<EnemyController>();
+        uiController.AddObserver(this);
     }
 
-    void Update()
+    private void Update()
     {
         // TODO - update health + stamina UI
 
         // Dev workaround to demo level 2
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            SceneManager.LoadScene(2);
+            //SceneManager.LoadScene(2);
         }
     }
 
@@ -80,6 +81,10 @@ public class GameManager : Observer
             case NotificationType.PLAYER_DEAD:
                 uiController.OnNotify(NotificationType.PLAYER_DEAD);
                 break;
+
+            case NotificationType.FIRST_CHECKPOINT_DONE:
+                uiController.OnNotify(NotificationType.FIRST_CHECKPOINT_DONE);
+                break;
         }
     }
 
@@ -89,6 +94,9 @@ public class GameManager : Observer
         {
             case 1:
                 uiController.OnNotify(NotificationType.LEVEL1_START);
+                ChickenCoup firstPuzzle = GameObject.FindObjectOfType<ChickenCoup>();
+                firstPuzzle.AddObserver(this);
+                enemies = GameObject.FindObjectsOfType<EnemyController>();
                 break;
             case 2:
                 uiController.OnNotify(NotificationType.LEVEL2_START);

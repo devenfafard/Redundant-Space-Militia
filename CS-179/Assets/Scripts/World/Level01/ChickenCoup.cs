@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ChickenCoup : MonoBehaviour
+public class ChickenCoup : Subject
 {
     private GameObject chicken_1;
     private GameObject chicken_2;
@@ -16,14 +16,10 @@ public class ChickenCoup : MonoBehaviour
     private bool chicken_3_Found = false;
     private bool chicken_4_Found = false;
     private bool chicken_5_Found = false;
-
-
+    
     private bool checkpoint_complete = false; //is the puzzle solved? 
-
-    public string levelName; public GameObject playerController;//test line
-
-    // Start is called before the first frame update
-    void Start()
+    
+    private void Start()
     {
         chicken_1 = GameObject.FindGameObjectWithTag("Chicken01");
         chicken_2 = GameObject.FindGameObjectWithTag("Chicken02");
@@ -32,14 +28,12 @@ public class ChickenCoup : MonoBehaviour
         chicken_5 = GameObject.FindGameObjectWithTag("Chicken05");
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        check_Chickens();
-
         if (Input.GetKeyDown(KeyCode.Z))
         {
             chicken_1_Found = chicken_2_Found = chicken_3_Found = chicken_4_Found = chicken_5_Found = true;
+            check_Chickens();
         }
     }
 
@@ -48,22 +42,27 @@ public class ChickenCoup : MonoBehaviour
         if (chicken.gameObject == chicken_1)
         {
             chicken_1_Found = true;
+            check_Chickens();
         }
         if (chicken.gameObject == chicken_2)
         {
             chicken_2_Found = true;
+            check_Chickens();
         }
         if (chicken.gameObject == chicken_3)
         {
             chicken_3_Found = true;
+            check_Chickens();
         }
         if (chicken.gameObject == chicken_4)
         {
             chicken_4_Found = true;
+            check_Chickens();
         }
         if (chicken.gameObject == chicken_5)
         {
             chicken_5_Found = true;
+            check_Chickens();
         }
     }
 
@@ -71,14 +70,8 @@ public class ChickenCoup : MonoBehaviour
     {
         if (chicken_1_Found && chicken_2_Found && chicken_3_Found && chicken_4_Found && chicken_5_Found)
         {
-            checkpoint_complete = true; //the puzzle is solved
-
-            /*Vector3 rot = new Vector3(0f, -93.215f, 0f);
-            Vector3 loc = new Vector3(-19, 1, 10);
-            playerController.transform.eulerAngles = rot;
-            playerController.transform.position = loc;*/
-
-            //SceneManager.LoadScene(levelName);
+            Notify(NotificationType.FIRST_CHECKPOINT_DONE);
+            checkpoint_complete = true;
         }
     }
 

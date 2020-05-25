@@ -43,7 +43,7 @@ public class PlayerController : Subject
     private float next_time_to_fire = 0.0f;
     private Animator zoomCameraAnimator = null;
     private bool zoomed = false;
-    private Camera main_camera = null;
+    [SerializeField] private Camera main_camera = null;
     private GameObject crosshair = null;
     private bool is_aiming = false;
 
@@ -52,6 +52,7 @@ public class PlayerController : Subject
     [SerializeField] private float healthRegenerationRate = 1.0f;
 
     //Carrying-related members
+    [SerializeField] private Transform pickupDestination = null;
     private bool canCarry = false;
     private bool isCarrying = false;
     private bool isColliding = false;
@@ -73,7 +74,7 @@ public class PlayerController : Subject
         
         zoomCameraAnimator = transform.Find(Tags.LOOK_VIEW).transform.Find(Tags.ZOOM_CAMERA).GetComponent<Animator>();
         crosshair = GameObject.FindWithTag(Tags.CROSSHAIR);
-        main_camera = Camera.main;
+        //main_camera = Camera.main;
 
         current_weapon_index = 0;
         weapons[current_weapon_index].gameObject.SetActive(true);
@@ -96,6 +97,7 @@ public class PlayerController : Subject
         Crouch();
         ShootWeapon();
         Zoom();
+        PickUp();
 
         #region [Health Stuff]
         if (health <= 0f)
@@ -447,52 +449,52 @@ public class PlayerController : Subject
     #region [OBJECT PICKUP FUNCTIONS]
     private void PickUp()
     {
-        RaycastHit hit = new RaycastHit();
-        if (Physics.Raycast(main_camera.transform.position, this.transform.position, out hit, 10))
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            if(hit.transform != null)
+            print("Attempting pickup!");
+            RaycastHit hit = new RaycastHit();
+            Debug.DrawRay(main_camera.transform.position, Vector3.forward, Color.red);
+            if (Physics.Raycast(main_camera.transform.position, main_camera.transform.forward, out hit, 10))
             {
-                float distance = Vector3.Distance(this.transform.position, hit.transform.position);
-                if (distance >= 3.0f)
+                if (hit.transform != null)
                 {
-                    canCarry = true;
-                }
-                else
-                {
-                    canCarry = false;
+                    print("Hit something!");
+                    float distance = Vector3.Distance(this.transform.position, hit.transform.position);
+                    print(hit.transform.gameObject.name);
+
+                    if (distance >= 1.0f)
+                    {
+                        print("Thing we hit is in reach!");
+                        canCarry = true;
+                        if (hit.transform.GetComponent<Rigidbody>() != null)
+                        {
+                            print("Thing we hit has a rigidbody!");
+                            hit.transform.GetComponent<Rigidbody>().isKinematic = true;
+                            hit.transform.parent = pickupDestination.transform;
+                            hit.transform.position = pickupDestination.transform.position;
+                            isCarrying = true;
+                            canCarry = false;
+                            disarmed = true;
+                        }
+                    }
+                    else
+                    {
+                        canCarry = false;
+                    }
                 }
             }
+        }
 
-            if(canCarry == true && Input.GetKeyDown("E"))
+        if (isCarrying == true)
+        {
+            if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
             {
-                hit.transform.GetComponent<Rigidbody>().isKinematic = true;
-                hit.transform.parent = main_camera.transform;
-                isCarrying = true;
-                canCarry = false;
-                disarmed = true;
-            }
-
-            if(isCarrying == true)
-            {
-                if (Input.GetMouseButtonDown(0))
-                {
-                    hit.transform.GetComponent<Rigidbody>().isKinematic = true;
-                    hit.transform.parent = null;
-                    isCarrying = false;
-                    hit.transform.GetComponent<Rigidbody>().AddForce(main_camera.transform.forward * throwStrength);
-
-                    reset = true;
-                    disarmed = false;
-                }
-                else if (Input.GetMouseButtonDown(1))
-                {
-                    hit.transform.GetComponent<Rigidbody>().isKinematic = false;
-                    hit.transform.transform.parent = null;
-                    isCarrying = false;
-
-                    reset = true;
-                    disarmed = false;
-                }
+                print("Gently place the chimken");
+                pickupDestination.transform.GetChild(0).transform.GetComponent<Rigidbody>().isKinematic = false;
+                pickupDestination.transform.GetChild(0).transform.transform.parent = null;
+                isCarrying = false;
+                reset = true;
+                disarmed = false;
             }
         }
     }
