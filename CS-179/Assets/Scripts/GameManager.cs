@@ -7,7 +7,12 @@ public class GameManager : Observer
 {
     private UIController uiController = null;
     private PlayerController player = null;
+    private PowerBase1 firstPowerBase = null;
+    private PowerBase2 secondPowerBase = null;
+    private TerminalBase1 firstTerminal = null;
+    private TerminalBase2 secondTerminal = null;
     private EnemyController[] enemies = null;
+    private SpaceShip ship = null;
     private OpenGate secondGate = null;
     private int enemyKillCount = 0;
 
@@ -90,6 +95,30 @@ public class GameManager : Observer
                 uiController.OnNotify(NotificationType.FIRST_CHECKPOINT_DONE);
                 break;
 
+            case NotificationType.POWERBASE_1_DONE:
+                uiController.OnNotify(NotificationType.POWERBASE_1_DONE);
+                firstTerminal.OnNotify(NotificationType.POWERBASE_1_DONE);
+                break;
+
+            case NotificationType.POWERBASE_2_DONE:
+                uiController.OnNotify(NotificationType.POWERBASE_2_DONE);
+                secondTerminal.OnNotify(NotificationType.POWERBASE_2_DONE);
+                break;
+
+            case NotificationType.TERMINAL_1_DONE:
+                uiController.OnNotify(NotificationType.TERMINAL_1_DONE);
+                ship.OnNotify(NotificationType.TERMINAL_1_DONE);
+                break;
+
+            case NotificationType.TERMINAL_2_DONE:
+                uiController.OnNotify(NotificationType.TERMINAL_2_DONE);
+                ship.OnNotify(NotificationType.TERMINAL_2_DONE);
+                break;
+
+            case NotificationType.LEVEL1_COMPLETE:
+                uiController.OnNotify(NotificationType.LEVEL1_COMPLETE);
+                break;
+
             case NotificationType.ENEMY_DEAD:
                 enemyKillCount++;
                 print("ENEMIES KILLED : " + enemyKillCount);
@@ -116,6 +145,16 @@ public class GameManager : Observer
                 enemies = GameObject.FindObjectsOfType<EnemyController>();
                 player = GameObject.FindObjectOfType<PlayerController>();
                 player.AddObserver(this);
+                firstPowerBase = GameObject.FindObjectOfType<PowerBase1>();
+                secondPowerBase = GameObject.FindObjectOfType<PowerBase2>();
+                firstTerminal = GameObject.FindObjectOfType<TerminalBase1>();
+                secondTerminal = GameObject.FindObjectOfType<TerminalBase2>();
+                ship = GameObject.FindObjectOfType<SpaceShip>();
+                firstPowerBase.AddObserver(this);
+                secondPowerBase.AddObserver(this);
+                firstTerminal.AddObserver(this);
+                secondTerminal.AddObserver(this);
+                ship.AddObserver(this);
                 print(enemies.Length);
                 foreach(EnemyController enemy in enemies)
                 {
