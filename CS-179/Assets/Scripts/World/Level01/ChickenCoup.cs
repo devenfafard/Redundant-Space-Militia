@@ -30,6 +30,7 @@ public class ChickenCoup : Subject
 
     private void Update()
     {
+        // Dev shortcut
         if (Input.GetKeyDown(KeyCode.Z))
         {
             chicken_1_Found = chicken_2_Found = chicken_3_Found = chicken_4_Found = chicken_5_Found = true;
