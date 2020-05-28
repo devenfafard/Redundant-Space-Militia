@@ -1430,7 +1430,7 @@ MonoBehaviour:
     type: 3}
   attack_point: {fileID: 6065107822513150969}
   plasma_bullet_start_position: {fileID: 2532615183537643166}
-  shoot_sound: {fileID: 0}
+  shoot_sound: {fileID: 5298744956852987641}
 --- !u!1 &5809990063855741693
 GameObject:
   m_ObjectHideFlags: 0
@@ -2287,16 +2287,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4645224227343103562}
     m_Modifications:
-    - target: {fileID: 7507260564007703412, guid: 053671bbd88c6eb4e9fe6804114c703f,
-        type: 3}
-      propertyPath: m_Name
-      value: Plasma
-      objectReference: {fileID: 0}
-    - target: {fileID: 7507260564007703412, guid: 053671bbd88c6eb4e9fe6804114c703f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6714580130122844076, guid: 053671bbd88c6eb4e9fe6804114c703f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2366,6 +2356,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 7.874032
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507260564007703412, guid: 053671bbd88c6eb4e9fe6804114c703f,
+        type: 3}
+      propertyPath: m_Name
+      value: Plasma
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507260564007703412, guid: 053671bbd88c6eb4e9fe6804114c703f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 053671bbd88c6eb4e9fe6804114c703f, type: 3}
