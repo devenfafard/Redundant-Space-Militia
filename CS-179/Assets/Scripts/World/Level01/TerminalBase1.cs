@@ -2,87 +2,51 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TerminalBase1 : MonoBehaviour
+public class TerminalBase1 : Subject
 {
-    private GameObject terminal1;
+    private bool isBasePowered = false;
+    private bool canUse = false;
+    private bool terminalActivated = false;
+    private PowerBase1 powerBase = null;
 
-    private bool checkPower;
-    private bool checkIfTerminalUsed = false;
-    private bool activDisplayDone = false;
-    private bool displayDirections = false;
-
-    private float timer = 7f;
-    private float time = 0f;
-
-    public Canvas terminalDirections;
-    public Canvas terminalActivated;
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        terminal1 = GameObject.FindGameObjectWithTag("PowerStation1");
+        powerBase = GameObject.FindObjectOfType<PowerBase1>();
+    }
+    private void Update()
+    {        
+        if (Input.GetKeyDown(KeyCode.E) && canUse == true)
+        {
+            print("terminal 1 activated");
+            terminalActivated = true;
+            Notify(NotificationType.TERMINAL_1_DONE);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnNotify(NotificationType type)
     {
-        
-        checkPower = terminal1.GetComponent<PowerBase1>().checkPowerCell1Status();
-        TerminalActive();
-        DisplayActive();
-        
-        if (Input.GetKeyDown(KeyCode.E) && displayDirections)
+        if (type == NotificationType.POWERBASE_1_DONE)
         {
-            checkIfTerminalUsed = true;
-            displayDirections = false;
-
+            isBasePowered = true;
         }
-        
-
     }
 
     private void OnTriggerEnter(Collider Player)
     {
-        if (Player.gameObject.tag == "Player" && checkPower && !checkIfTerminalUsed)
+        if (Player.gameObject.tag == "Player" && terminalActivated == false)
         {
-            displayDirections = true;
+            print("Close enough to use terminal");
+            canUse = true;
         }
     }
 
-    private void TerminalActive()
+    private void OnTriggerExit(Collider other)
     {
-        if (activDisplayDone == false && checkIfTerminalUsed)
+        if (other.gameObject.tag == "Player")
         {
-            if (time < timer)
-            {
-                terminalActivated.gameObject.SetActive(true);
-                time += Time.deltaTime;
-            }
-            else
-            {
-                terminalActivated.gameObject.SetActive(false);
-                time = 0;
-                activDisplayDone = true;
-            }
+            print("Close enough to use terminal");
+            canUse = false;
         }
     }
-
-    public bool checkTerminalUsed()
-    {
-        return checkIfTerminalUsed;
-    }
-
-    private void DisplayActive()
-    {
-        if (displayDirections)
-        {
-            terminalDirections.gameObject.SetActive(true);
-        }
-        else
-        {
-            terminalDirections.gameObject.SetActive(false);
-        }
-    }
-
 }
 

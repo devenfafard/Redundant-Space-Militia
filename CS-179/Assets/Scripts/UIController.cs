@@ -25,11 +25,18 @@ public class UIController : Subject
     private CanvasGroup winPanelGroup = null;
     private CanvasGroup hudPanelGroup = null;
 
+    private bool isCoroutineRunning = false;
+
     [SerializeField] private TextMeshProUGUI notificationBody = null;
 
     [SerializeField] private string introText;
     [SerializeField] private string firstCheckpointText;
     [SerializeField] private string secondCheckpointText;
+    [SerializeField] private string firstBaseText;
+    [SerializeField] private string secondBaseText;
+    [SerializeField] private string directions;
+    [SerializeField] private string firstTerminalText;
+    [SerializeField] private string secondTerminalText;
 
     #region [MONOBEHAVIORS]
     private void Awake() // Make the UI system persist between scenes
@@ -181,6 +188,67 @@ public class UIController : Subject
                 // TODO : Display level 2 UI notification
                 break;
 
+            case NotificationType.POWERBASE_1_DONE:
+                if (notificationBody != null)
+                {
+                    notificationBody.text = firstBaseText;
+                    if (isCoroutineRunning == false)
+                    {
+                        Debug.Log("QU'EST-CE QUE LE FUCK 1");
+                        StartCoroutine(ClearTextAfterSeconds(notificationBody, 5.0f));
+                    }
+                }
+                break;
+
+            case NotificationType.POWERBASE_2_DONE:
+                if (notificationBody != null)
+                {
+                    notificationBody.text = secondBaseText;
+                    if (isCoroutineRunning == false)
+                    {
+                        Debug.Log("QU'EST-CE QUE LE FUCK 2");
+                        StartCoroutine(ClearTextAfterSeconds(notificationBody, 5.0f));
+                    }
+                }
+                break;
+
+            case NotificationType.TERMINAL_1_DONE:
+                if (notificationBody != null)
+                {
+                    notificationBody.text = firstTerminalText;
+                    if (isCoroutineRunning == false)
+                    {
+                        //Debug.Log("QU'EST-CE QUE LE FUCK 3");
+                        StartCoroutine(ClearTextAfterSeconds(notificationBody, 5.0f));
+                    }
+                }
+                break;
+
+            case NotificationType.TERMINAL_2_DONE:
+                if (notificationBody != null)
+                {
+                    notificationBody.text = secondTerminalText;
+                    if (isCoroutineRunning == false)
+                    {
+                        Debug.Log("QU'EST-CE QUE LE FUCK 4");
+                        StartCoroutine(ClearTextAfterSeconds(notificationBody, 5.0f));
+                    }
+                }
+                break;
+
+            case (NotificationType.DISPLAY_TERMINAL_DIRECTIONS):
+                if (notificationBody != null)
+                {
+                    notificationBody.text = directions;
+                    if (isCoroutineRunning == false)
+                    {
+
+                        Debug.Log("QU'EST-CE QUE LE FUCK 5");
+                        //StartCoroutine(ClearTextAfterSeconds(notificationBody, 5.0f));
+                    }
+                }
+                break;
+
             case NotificationType.GAME_OVER:
                 LockMouse(false);
                 TurnOffPanel(hudPanelGroup, containerCanvas);
@@ -219,8 +287,11 @@ public class UIController : Subject
 
     private IEnumerator ClearTextAfterSeconds(TextMeshProUGUI textObject, float seconds)
     {
+        print("UCK THIS COLIJBLIVLIYV");
+        isCoroutineRunning = true;
         yield return new WaitForSeconds(seconds);
         textObject.text = "";
+        isCoroutineRunning = false;
     }
 
     private void TurnOnPanel(CanvasGroup panelGroup, Canvas panelCanvas)

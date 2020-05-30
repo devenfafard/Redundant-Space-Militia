@@ -1027,7 +1027,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -1872,7 +1872,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -2649,7 +2649,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1310611575}
-  - component: {fileID: 1310611576}
   - component: {fileID: 1310611577}
   m_Layer: 0
   m_Name: _GameManager
@@ -2672,18 +2671,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1310611576
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1310611574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea55bed6a9b05a24d9f1a846a1986436, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1310611577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2800,7 +2787,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -3118,7 +3105,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 25
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -3147,7 +3134,7 @@ MonoBehaviour:
     spaceCount: 15
     wordCount: 16
     linkCount: 0
-    lineCount: 5
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -3680,7 +3667,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: "< Insert Game Title Here > \nGameplay Programming\nJacques Fracchia\nJerry
     Kuei\n\nEnvironment Programing / Design\nAshley McDaniel\nMichael Rojas\n\nUI
-    Programming / Quality Assurance\nDeven Fafard"
+    Programming / Quality Assurance\nDeven Fafard\n\nAudio\n!kcuf\nhttps://soundcloud.com/officialkcuf"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4daeba022b469184bb5d39b06824d239, type: 2}
   m_sharedMaterial: {fileID: 4153808608026634529, guid: 4daeba022b469184bb5d39b06824d239,
@@ -3727,7 +3714,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 176
+  m_firstOverflowCharacterIndex: 202
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -3751,12 +3738,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1448762057}
-    characterCount: 188
+    characterCount: 237
     spriteCount: 0
-    spaceCount: 29
-    wordCount: 24
+    spaceCount: 33
+    wordCount: 30
     linkCount: 0
-    lineCount: 11
+    lineCount: 15
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -4202,9 +4189,16 @@ MonoBehaviour:
   health_stats: {fileID: 8040961093071518393}
   stamina_stats: {fileID: 3621314884030464211}
   notificationBody: {fileID: 1384907748}
-  introText: Something about chickens
-  firstCheckpointText: cgcnc v ncb
-  secondCheckpointText: Second checkpoint complete
+  introText: Aliens are invading your village. Save your farm animals before fending
+    off alien invaders. Good luck!
+  firstCheckpointText: You've saved all of the animals. Leave the gate and defend
+    the village!
+  secondCheckpointText: Activate each base's power cells to turn on the terminals.
+  firstBaseText: First base powered on. Activate the terminal.
+  secondBaseText: Second base powered on. Activate the terminal.
+  directions: Press [E] to activate terminal
+  firstTerminalText: Now pinging "TURN ON" to spaceship.
+  secondTerminalText: Spaceship is now charged.
 --- !u!1 &1857328282
 GameObject:
   m_ObjectHideFlags: 0
@@ -4847,7 +4841,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
