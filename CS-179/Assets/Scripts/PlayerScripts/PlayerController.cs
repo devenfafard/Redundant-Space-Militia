@@ -67,7 +67,7 @@ public class PlayerController : Subject
     #region [MONOBEHAVIORS]
     private void Awake()
     {
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
         character_controller = GetComponent<CharacterController>();
         player_footstep = GetComponentInChildren<PlayerFootSteps>();
         look_root = transform.GetChild(0);
