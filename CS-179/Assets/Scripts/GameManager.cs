@@ -117,6 +117,7 @@ public class GameManager : Observer
 
             case NotificationType.LEVEL1_COMPLETE:
                 uiController.OnNotify(NotificationType.LEVEL1_COMPLETE);
+                SceneManager.LoadScene(2, LoadSceneMode.Single);
                 break;
 
             case NotificationType.ENEMY_DEAD:

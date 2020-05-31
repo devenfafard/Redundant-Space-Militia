@@ -20,6 +20,7 @@ public enum NotificationType
     TERMINAL_2_DONE,
     LEVEL1_COMPLETE,
     LEVEL2_COMPLETE,
+    DOOR_OPEN,
     GAME_OVER
 };
 

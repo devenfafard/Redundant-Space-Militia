@@ -34,6 +34,7 @@ public class ExitDoor : MonoBehaviour
         isObject1Found = platform1.GetComponent<Platform_1>().getObjectStatus();
         isObject2Found = platform2.GetComponent<Platform_2>().getObjectStatus();
         GetPuzzle2Status();
+
     }
 
     void OnTriggerEnter(Collider coll)

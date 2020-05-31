@@ -37,6 +37,8 @@ public class UIController : Subject
     [SerializeField] private string directions;
     [SerializeField] private string firstTerminalText;
     [SerializeField] private string secondTerminalText;
+    [SerializeField] private string secondIntroText;
+    [SerializeField] private string secondPuzzleText;
 
     #region [MONOBEHAVIORS]
     private void Awake() // Make the UI system persist between scenes
@@ -163,6 +165,30 @@ public class UIController : Subject
                 }
                 break;
 
+            case NotificationType.LEVEL2_START:
+                TurnOffPanel(loadingPanelGroup, containerCanvas);
+                TurnOffPanel(gameOverPanelGroup, containerCanvas);
+                TurnOffPanel(winPanelGroup, containerCanvas);
+                TurnOnPanel(hudPanelGroup, containerCanvas);
+                if (notificationBody != null)
+                {
+                    notificationBody.text = secondIntroText;
+                    StartCoroutine(ClearTextAfterSeconds(notificationBody, 5.0f));
+                }
+                break;
+
+            case NotificationType.DOOR_OPEN:
+                TurnOffPanel(loadingPanelGroup, containerCanvas);
+                TurnOffPanel(gameOverPanelGroup, containerCanvas);
+                TurnOffPanel(winPanelGroup, containerCanvas);
+                TurnOnPanel(hudPanelGroup, containerCanvas);
+                if (notificationBody != null)
+                {
+                    notificationBody.text = secondCheckpointText;
+                    StartCoroutine(ClearTextAfterSeconds(notificationBody, 5.0f));
+                }
+                break;
+
             case NotificationType.FIRST_CHECKPOINT_DONE:
                 notificationBody.text = firstCheckpointText;
                 if (notificationBody != null)
@@ -179,13 +205,6 @@ public class UIController : Subject
                     notificationBody.text = secondCheckpointText;
                     StartCoroutine(ClearTextAfterSeconds(notificationBody, 5.0f));
                 }
-                break;
-
-            case NotificationType.LEVEL2_START:
-                TurnOffPanel(loadingPanelGroup, containerCanvas);
-                TurnOffPanel(gameOverPanelGroup, containerCanvas);
-                TurnOffPanel(winPanelGroup, containerCanvas);
-                // TODO : Display level 2 UI notification
                 break;
 
             case NotificationType.POWERBASE_1_DONE:

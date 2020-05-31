@@ -21,7 +21,6 @@ public class Platform_2 : MonoBehaviour
     {
         if( (platform.gameObject.tag == "engine") || (platform.gameObject.tag == "Chicken_lvl2")){       
             platform2Done = true;
-            //Notify(NotificationType.
             print("Platform done");
         }
     }
@@ -29,8 +28,5 @@ public class Platform_2 : MonoBehaviour
      public bool getObjectStatus()
     {
         return platform2Done;
-        
     }
-
-
 }

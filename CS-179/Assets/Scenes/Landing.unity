@@ -3105,7 +3105,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 76
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -3714,7 +3714,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 202
+  m_firstOverflowCharacterIndex: 196
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -4199,6 +4199,8 @@ MonoBehaviour:
   directions: Press [E] to activate terminal
   firstTerminalText: Now pinging "TURN ON" to spaceship.
   secondTerminalText: Spaceship is now charged.
+  secondIntroText: Activate the console to get out of the hallway.
+  secondPuzzleText: Power the terminal with a chicken and a battery.
 --- !u!1 &1857328282
 GameObject:
   m_ObjectHideFlags: 0
