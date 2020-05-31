@@ -14,6 +14,7 @@ public class GameManager : Observer
     private EnemyController[] enemies = null;
     private SpaceShip ship = null;
     private OpenGate secondGate = null;
+    private GameMusic gameMusic = null;
     private int enemyKillCount = 0;
 
     #region SINGLETON IMPLEMENTATION
@@ -58,6 +59,7 @@ public class GameManager : Observer
 
         uiController = GameObject.FindObjectOfType<UIController>();
         uiController.AddObserver(this);
+
     }
 
     private void Update()
@@ -89,6 +91,7 @@ public class GameManager : Observer
 
             case NotificationType.PLAYER_DEAD:
                 uiController.OnNotify(NotificationType.GAME_OVER);
+                gameMusic.OnNotify(NotificationType.GAME_OVER);
                 break;
 
             case NotificationType.FIRST_CHECKPOINT_DONE:
@@ -117,6 +120,7 @@ public class GameManager : Observer
 
             case NotificationType.LEVEL1_COMPLETE:
                 uiController.OnNotify(NotificationType.LEVEL1_COMPLETE);
+                gameMusic.OnNotify(NotificationType.LEVEL1_COMPLETE);
                 break;
 
             case NotificationType.ENEMY_DEAD:
@@ -126,6 +130,7 @@ public class GameManager : Observer
                 if(enemyKillCount == 4)
                 {
                     uiController.OnNotify(NotificationType.SECOND_CHECKPOINT_DONE);
+                    gameMusic.OnNotify(NotificationType.SECOND_CHECKPOINT_DONE);
                     secondGate.SetCompleteKills(true);
                 }
                 break;
@@ -150,12 +155,15 @@ public class GameManager : Observer
                 firstTerminal = GameObject.FindObjectOfType<TerminalBase1>();
                 secondTerminal = GameObject.FindObjectOfType<TerminalBase2>();
                 ship = GameObject.FindObjectOfType<SpaceShip>();
+                gameMusic = GameObject.FindObjectOfType<GameMusic>();
                 firstPowerBase.AddObserver(this);
                 secondPowerBase.AddObserver(this);
                 firstTerminal.AddObserver(this);
                 secondTerminal.AddObserver(this);
                 ship.AddObserver(this);
+                gameMusic.AddObserver(this);
                 print(enemies.Length);
+                gameMusic.OnNotify(NotificationType.LEVEL1_START);
                 foreach(EnemyController enemy in enemies)
                 {
                     print(enemy.name);

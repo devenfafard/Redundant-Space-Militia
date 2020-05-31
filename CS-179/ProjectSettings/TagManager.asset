@@ -33,6 +33,7 @@ TagManager:
   - Terminal2
   - Space Ship Camera
   - Space Ship
+  - GameAudio
   layers:
   - Default
   - TransparentFX
