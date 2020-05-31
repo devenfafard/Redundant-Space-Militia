@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FirstGate : MonoBehaviour
 {
-    
     public GameObject hinge1;
 
     public GameObject hinge2;
