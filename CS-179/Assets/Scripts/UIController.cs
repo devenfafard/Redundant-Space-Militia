@@ -194,7 +194,6 @@ public class UIController : Subject
                     notificationBody.text = firstBaseText;
                     if (isCoroutineRunning == false)
                     {
-                        Debug.Log("QU'EST-CE QUE LE FUCK 1");
                         StartCoroutine(ClearTextAfterSeconds(notificationBody, 5.0f));
                     }
                 }
@@ -206,7 +205,6 @@ public class UIController : Subject
                     notificationBody.text = secondBaseText;
                     if (isCoroutineRunning == false)
                     {
-                        Debug.Log("QU'EST-CE QUE LE FUCK 2");
                         StartCoroutine(ClearTextAfterSeconds(notificationBody, 5.0f));
                     }
                 }
@@ -218,7 +216,6 @@ public class UIController : Subject
                     notificationBody.text = firstTerminalText;
                     if (isCoroutineRunning == false)
                     {
-                        //Debug.Log("QU'EST-CE QUE LE FUCK 3");
                         StartCoroutine(ClearTextAfterSeconds(notificationBody, 5.0f));
                     }
                 }
@@ -230,7 +227,6 @@ public class UIController : Subject
                     notificationBody.text = secondTerminalText;
                     if (isCoroutineRunning == false)
                     {
-                        Debug.Log("QU'EST-CE QUE LE FUCK 4");
                         StartCoroutine(ClearTextAfterSeconds(notificationBody, 5.0f));
                     }
                 }
@@ -242,8 +238,6 @@ public class UIController : Subject
                     notificationBody.text = directions;
                     if (isCoroutineRunning == false)
                     {
-
-                        Debug.Log("QU'EST-CE QUE LE FUCK 5");
                         //StartCoroutine(ClearTextAfterSeconds(notificationBody, 5.0f));
                     }
                 }
@@ -287,7 +281,6 @@ public class UIController : Subject
 
     private IEnumerator ClearTextAfterSeconds(TextMeshProUGUI textObject, float seconds)
     {
-        print("UCK THIS COLIJBLIVLIYV");
         isCoroutineRunning = true;
         yield return new WaitForSeconds(seconds);
         textObject.text = "";
