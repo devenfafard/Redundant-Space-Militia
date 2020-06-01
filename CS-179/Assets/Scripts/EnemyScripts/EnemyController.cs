@@ -216,7 +216,7 @@ public class EnemyController : Subject
             }
 
             attack_timer = 0.0f;
-            //shoot_sound.Play();
+            shoot_sound.Play();
         }
 
         if (Vector3.Distance(transform.position, target.position) > attack_distance + follow_after_attack_dist)

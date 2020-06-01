@@ -23,7 +23,7 @@ public class PlayerFootSteps : MonoBehaviour
     private float sprint_volume = 1f;
     private float crouch_volume = 0.1f;
     private float walk_volume_min = 0.2f;
-    private float walk_volume_max = 0.6f;
+    private float walk_volume_max = 0.5f;
 
     void Awake()
     {
@@ -36,8 +36,6 @@ public class PlayerFootSteps : MonoBehaviour
     void Update()
     {
         checkToPlayFootstepSound();
-
-
     }
 
     void checkToPlayFootstepSound()
@@ -65,6 +63,7 @@ public class PlayerFootSteps : MonoBehaviour
         else
         {
             accumulated_distance = 0f;
+            footstep_sound.Stop();
         }
     }
 }
