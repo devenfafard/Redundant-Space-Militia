@@ -10,22 +10,17 @@ public class EnemyAnimationTags
     public const string DEAD_PARAM = "Dead";
     public const string SHOOT_PARAM = "Shoot";
     public const string DEAD_TRIGGER = "Dead";
-
 }
-
 
 public class EnemyAnimation : MonoBehaviour
 {
-
     private Animator Anima;
-    // Start is called before the first frame update
+    
     void Awake()
     {
         Anima = GetComponent<Animator>();
-
     }
 
-    // Update is called once per frame
     public void Walk(bool walk)
     {
         Anima.SetBool(EnemyAnimationTags.WALK_PARAM, walk);
@@ -44,5 +39,10 @@ public class EnemyAnimation : MonoBehaviour
     public void Dead()
     {
         Anima.SetTrigger(EnemyAnimationTags.DEAD_TRIGGER);
+    }
+
+    public void playShootSound()
+    {
+        // Only here to suppress missing animator error.
     }
 }
