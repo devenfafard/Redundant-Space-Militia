@@ -15,6 +15,7 @@ public class GameManager : Observer
     private SpaceShip ship = null;
     private OpenGate secondGate = null;
     private GameMusic gameMusic = null;
+    private EndZone endZone = null;
     private int enemyKillCount = 0;
 
     #region SINGLETON IMPLEMENTATION
@@ -59,7 +60,6 @@ public class GameManager : Observer
 
         uiController = GameObject.FindObjectOfType<UIController>();
         uiController.AddObserver(this);
-
     }
 
     private void Update()
@@ -74,6 +74,17 @@ public class GameManager : Observer
         {
             uiController.OnNotify(NotificationType.SECOND_CHECKPOINT_DONE);
             secondGate.SetCompleteKills(true);
+        }
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            SceneManager.LoadScene(4);
+        }
+
+        if(Input.GetKeyDown(KeyCode.V))
+        {
+            enemyKillCount = 18;
+            print("you won");
+            uiController.OnNotify(NotificationType.WIN_GAME);
         }
     }
 
@@ -121,17 +132,31 @@ public class GameManager : Observer
             case NotificationType.LEVEL1_COMPLETE:
                 uiController.OnNotify(NotificationType.LEVEL1_COMPLETE);
                 gameMusic.OnNotify(NotificationType.LEVEL1_COMPLETE);
+                SceneManager.LoadScene(2, LoadSceneMode.Single);
+                break;
+
+            case NotificationType.LEVEL_2_BEGIN_COMPLETED:
+                SceneManager.LoadScene(4, LoadSceneMode.Single);
+                break;
+
+            case NotificationType.LEVEL2_COMPLETE:
+                print("FUCK EVERYTHING");
+                SceneManager.LoadScene(4, LoadSceneMode.Single);
                 break;
 
             case NotificationType.ENEMY_DEAD:
                 enemyKillCount++;
-                print("ENEMIES KILLED : " + enemyKillCount);
 
-                if(enemyKillCount == 4)
+                if(enemyKillCount == 4 && GetBuildIndex() == 1)
                 {
                     uiController.OnNotify(NotificationType.SECOND_CHECKPOINT_DONE);
                     gameMusic.OnNotify(NotificationType.SECOND_CHECKPOINT_DONE);
                     secondGate.SetCompleteKills(true);
+                }
+                if (enemyKillCount == 18 && GetBuildIndex() == 4)
+                {
+                    print("you won");
+                    uiController.OnNotify(NotificationType.WIN_GAME);
                 }
                 break;
         }
@@ -174,7 +199,29 @@ public class GameManager : Observer
                 uiController.OnNotify(NotificationType.LEVEL2_START);
                 Debug.Log("[Scene 2 Loaded]");
                 player = GameObject.FindObjectOfType<PlayerController>();
+                player.AddObserver(this);
+                endZone = GameObject.FindObjectOfType<EndZone>();
+                endZone.AddObserver(this);
+                break;
+            case 3:
+                uiController.OnNotify(NotificationType.PART_2_START);
+                Debug.Log("[Scene 3 Loaded]");
+                player = GameObject.FindObjectOfType<PlayerController>();
+                player.AddObserver(this);
+                EndZone waterLevelEndZone = GameObject.FindObjectOfType<EndZone>();
+                waterLevelEndZone.AddObserver(this);
+                break;
+            case 4:
+                uiController.OnNotify(NotificationType.PART_3_START);
+                Debug.Log("[Scene 4 Loaded]");
+                player.AddObserver(this);
                 enemies = GameObject.FindObjectsOfType<EnemyController>();
+                foreach (EnemyController enemy in enemies)
+                {
+                    print(enemy.name);
+                    enemy.AddObserver(this);
+                }
+                enemyKillCount = 0;
                 break;
         }
     }

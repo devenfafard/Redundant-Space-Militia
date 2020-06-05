@@ -89,8 +89,6 @@ public class EnemyController : Subject
     public void ApplyDamage(float damage)
     {
         health = health - damage;
-
-        print("Enemy Health : " + health);
         
         if(health <= 0.0f)
         {

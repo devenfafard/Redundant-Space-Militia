@@ -9,7 +9,7 @@ public class SpaceShip : Subject
     private Transform CameraPosition;
     public Camera mainCamera;
 
-    Animator TakeOff;
+    //Animator TakeOff;
 
     private bool terminal1_complete = false;
     private bool terminal2_complete = false;
@@ -18,7 +18,7 @@ public class SpaceShip : Subject
     private void Start()
     {
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        TakeOff = this.GetComponent<Animator>();
+        //TakeOff = this.GetComponent<Animator>();
     }
 
     public void OnNotify(NotificationType type)
@@ -40,7 +40,7 @@ public class SpaceShip : Subject
         if(player.gameObject.tag == "Player")
         {
             player_entered = true;
-            takeOff(false);
+            //takeOff(false);
             CheckTakeOff();
         }
     }
@@ -52,7 +52,7 @@ public class SpaceShip : Subject
             print("Player Entered");
             mainCamera.transform.position = CameraPosition.position;
 
-            takeOff(true);
+            //takeOff(true);
 
             Notify(NotificationType.LEVEL1_COMPLETE);
         }
@@ -60,6 +60,6 @@ public class SpaceShip : Subject
 
     void takeOff(bool state)
     {
-        TakeOff.SetBool("Take Off", state);
+        //TakeOff.SetBool("Take Off", state);
     }
 }

@@ -38,8 +38,9 @@ public class WeaponHandler : MonoBehaviour
     public GameObject attack_point;
 
     // These are here to supress warnings
-    private void PlaySound()   { }
-    private void SpawnObject() { }
+    private void PlaySound()      { }
+    private void SpawnObject()    { }
+    private void PlayWooshSound() { }
 
     void Awake()
     {

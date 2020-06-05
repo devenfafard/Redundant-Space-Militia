@@ -13,11 +13,11 @@ public class TerminalBase1 : Subject
     {
         powerBase = GameObject.FindObjectOfType<PowerBase1>();
     }
+
     private void Update()
     {        
         if (Input.GetKeyDown(KeyCode.E) && canUse == true)
         {
-            print("terminal 1 activated");
             terminalActivated = true;
             Notify(NotificationType.TERMINAL_1_DONE);
         }
@@ -35,7 +35,6 @@ public class TerminalBase1 : Subject
     {
         if (Player.gameObject.tag == "Player" && terminalActivated == false)
         {
-            print("Close enough to use terminal");
             canUse = true;
         }
     }
@@ -44,7 +43,6 @@ public class TerminalBase1 : Subject
     {
         if (other.gameObject.tag == "Player")
         {
-            print("Close enough to use terminal");
             canUse = false;
         }
     }

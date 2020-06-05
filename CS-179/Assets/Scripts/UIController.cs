@@ -39,6 +39,7 @@ public class UIController : Subject
     [SerializeField] private string secondTerminalText;
     [SerializeField] private string secondIntroText;
     [SerializeField] private string secondPuzzleText;
+    [SerializeField] private string trashText;
 
     #region [MONOBEHAVIORS]
     private void Awake() // Make the UI system persist between scenes
@@ -251,21 +252,43 @@ public class UIController : Subject
                 }
                 break;
 
-            case (NotificationType.DISPLAY_TERMINAL_DIRECTIONS):
+            case (NotificationType.PART_2_START):
+                TurnOffPanel(loadingPanelGroup, containerCanvas);
+                TurnOffPanel(gameOverPanelGroup, containerCanvas);
+                TurnOffPanel(winPanelGroup, containerCanvas);
+                TurnOnPanel(hudPanelGroup, containerCanvas);
                 if (notificationBody != null)
                 {
-                    notificationBody.text = directions;
+                    notificationBody.text = trashText;
                     if (isCoroutineRunning == false)
                     {
-                        //StartCoroutine(ClearTextAfterSeconds(notificationBody, 5.0f));
+                        StartCoroutine(ClearTextAfterSeconds(notificationBody, 5.0f));
                     }
                 }
+                break;
+
+            case (NotificationType.PART_3_START):
+                TurnOffPanel(loadingPanelGroup, containerCanvas);
+                TurnOffPanel(gameOverPanelGroup, containerCanvas);
+                TurnOffPanel(winPanelGroup, containerCanvas);
+                TurnOnPanel(hudPanelGroup, containerCanvas);
+                break;
+
+            case (NotificationType.LEVEL1_COMPLETE):
+                TurnOnPanel(loadingPanelGroup, containerCanvas);
+                TurnOffPanel(hudPanelGroup, containerCanvas);
                 break;
 
             case NotificationType.GAME_OVER:
                 LockMouse(false);
                 TurnOffPanel(hudPanelGroup, containerCanvas);
                 TurnOnPanel(gameOverPanelGroup, containerCanvas);
+                break;
+
+            case NotificationType.WIN_GAME:
+                LockMouse(false);
+                TurnOffPanel(hudPanelGroup, containerCanvas);
+                TurnOnPanel(winPanelGroup, containerCanvas);
                 break;
         }
     }
