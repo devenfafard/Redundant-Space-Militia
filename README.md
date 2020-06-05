@@ -40,7 +40,7 @@ We opted to use Unity (version 2019.1.14f) as our game engine. We chose it becau
 #### Scripting  
 Overall, we strived to follow best practices for game development - mainly event driven programming and separation of concerns. This means that the core game logic was facilitated by a centralized event manager (in our case GameManager). Relevant objects such as the enemies, checkpoint objectives, and the player notify GameManager of changes to their states in an effort to keep core functionality out of Update(); polling for changes on every frame has the potential to be very expensive. GameManager would in turn pass these notifications to relevant subsystem controllers. This was accomplished with a simple observer pattern implementation. Relevant events were declared in the NotificationType enum so multiple controllers could respond to the same event. In general, we followed a structure as shown in the below diagram:
 
-![Class Diagram](https://imgur.com/i3og5VX)
+![Class Diagram](https://i.imgur.com/i3og5VX.png)
 
 #### Tools  
 In addition to Unity, we used the Game development with Unity workload in order to use Visual Studio as our IDE. To track effort in a more modular fashion, we used Trello in addition to the spreadsheet that was provided.
