@@ -33,11 +33,7 @@ TagManager:
   - Terminal2
   - Space Ship Camera
   - Space Ship
-  - Console_1
-  - Chicken_lvl2
-  - engine
-  - level2_platform1
-  - level2_platform2
+  - GameAudio
   layers:
   - Default
   - TransparentFX

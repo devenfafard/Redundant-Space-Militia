@@ -67,7 +67,6 @@ public class PlayerController : Subject
     #region [MONOBEHAVIORS]
     private void Awake()
     {
-        //DontDestroyOnLoad(this);
         character_controller = GetComponent<CharacterController>();
         player_footstep = GetComponentInChildren<PlayerFootSteps>();
         look_root = transform.GetChild(0);
@@ -457,24 +456,19 @@ public class PlayerController : Subject
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            print("Attempting pickup!");
             RaycastHit hit = new RaycastHit();
             Debug.DrawRay(main_camera.transform.position, Vector3.forward, Color.red);
             if (Physics.Raycast(main_camera.transform.position, main_camera.transform.forward, out hit, 10))
             {
                 if (hit.transform != null)
                 {
-                    print("Hit something!");
                     float distance = Vector3.Distance(this.transform.position, hit.transform.position);
-                    print(hit.transform.gameObject.name);
 
                     if (distance >= 1.0f)
                     {
-                        print("Thing we hit is in reach!");
                         canCarry = true;
                         if (hit.transform.GetComponent<Rigidbody>() != null)
                         {
-                            print("Thing we hit has a rigidbody!");
                             hit.transform.GetComponent<Rigidbody>().isKinematic = true;
                             hit.transform.parent = pickupDestination.transform;
                             hit.transform.position = pickupDestination.transform.position;
@@ -506,7 +500,6 @@ public class PlayerController : Subject
 
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
             {
-                print("Gently place the chimken");
                 pickupDestination.transform.GetChild(0).transform.GetComponent<Rigidbody>().isKinematic = false;
                 pickupDestination.transform.GetChild(0).transform.transform.parent = null;
                 isCarrying = false;

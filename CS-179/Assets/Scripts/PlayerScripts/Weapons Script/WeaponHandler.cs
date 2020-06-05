@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum WeaponAim {
+public enum WeaponAim
+{
     NONE,
     SELF_AIM,
     AIM
@@ -36,6 +37,9 @@ public class WeaponHandler : MonoBehaviour
     public WeaponBulletType bullet_type;
     public GameObject attack_point;
 
+    // These are here to supress warnings
+    private void PlaySound()   { }
+    private void SpawnObject() { }
 
     void Awake()
     {
@@ -52,19 +56,19 @@ public class WeaponHandler : MonoBehaviour
         animator.SetBool(AnimationTags.AIM_PARAMETER, can_aim);
     }
 
-    //void turnOnMuzzleFlash()
-    //{
-    //    muzzleFlash.SetActive(true);
-    //}
+    void turnOnMuzzleFlash()
+    {
+        muzzleFlash.gameObject.SetActive(true);
+    }
 
-    //void turnOffMuzzleFlash()
-    //{
-    //    muzzleFlash.SetActive(false);
-    //}
+    void turnOffMuzzleFlash()
+    {
+        muzzleFlash.gameObject.SetActive(false);
+    }
 
     public void playMuzzleFlash()
     {
-        //Instantiate(muzzleFlash, muzzleFlash.Transform);
+        turnOnMuzzleFlash();
         muzzleFlash.Play();
     }
 

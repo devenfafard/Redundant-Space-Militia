@@ -1713,9 +1713,7 @@ GameObject:
   - component: {fileID: 1003637823731167707}
   - component: {fileID: 1128227226085939775}
   - component: {fileID: 2941013009226194100}
-  - component: {fileID: 6339707368896187586}
   - component: {fileID: 2205559277691683074}
-  - component: {fileID: 5172251664859465721}
   - component: {fileID: 8306156979697883803}
   m_Layer: 9
   m_Name: Alien_Enemy
@@ -1800,35 +1798,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &6339707368896187586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8404696452349820651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad9bc6ab6cf8c49918e927139198e469, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walk_speed: 5
-  run_speed: 8
-  chase_distance: 20
-  attack_distance: 10
-  follow_after_attack_dist: 10
-  patrol_radius_min: 2
-  patrol_radius_max: 20
-  patrol_time_limit: 5
-  wait_before_attack: 3
-  attack_point: {fileID: 0}
-  enemy_damage: 5
-  shoot_sound: {fileID: 8306156979697883803}
-  plasma_bullet: {fileID: 7507260564007703412, guid: 053671bbd88c6eb4e9fe6804114c703f,
-    type: 3}
-  plasma_bullet_start_position: {fileID: 1806387374414092425}
-  bullet_speed: 200
-  deactivate_timer: 3
 --- !u!114 &2205559277691683074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1841,21 +1810,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 145b466337a1945dab4f27d44335fe8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5172251664859465721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8404696452349820651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42cae2ac6befe0d44b7711fe4e2e3d61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  is_player: 0
-  is_alien: 1
 --- !u!82 &8306156979697883803
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2314,6 +2268,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8939417640325600651}
     m_Modifications:
+    - target: {fileID: 7507260564007703412, guid: 053671bbd88c6eb4e9fe6804114c703f,
+        type: 3}
+      propertyPath: m_Name
+      value: Plasma
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507260564007703412, guid: 053671bbd88c6eb4e9fe6804114c703f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6714580130122844076, guid: 053671bbd88c6eb4e9fe6804114c703f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2383,16 +2347,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7507260564007703412, guid: 053671bbd88c6eb4e9fe6804114c703f,
-        type: 3}
-      propertyPath: m_Name
-      value: Plasma
-      objectReference: {fileID: 0}
-    - target: {fileID: 7507260564007703412, guid: 053671bbd88c6eb4e9fe6804114c703f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 053671bbd88c6eb4e9fe6804114c703f, type: 3}
