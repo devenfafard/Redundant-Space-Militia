@@ -8,7 +8,7 @@ Repository for Team Redundant Space Militia's project in Dr. Shinar's CS179N cou
 
 
 ## Overview:  
-<Insert Game Title Here> is a first person shooter with some light puzzle and RPG elements. We were tasked with seeing the prototype through to completion in ten weeks.
+< Insert Game Title Here > is a first person shooter with some light puzzle and RPG elements. We were tasked with seeing the prototype through to completion in ten weeks.
 
 #### Data Box:  
 **Engineers:** Ashley McDaniel, Deven Fafard, Jacques Fracchia, Jerry Kuei, Michael Rojas  
