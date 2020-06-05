@@ -64,6 +64,7 @@ public class WeaponHandler : MonoBehaviour
 
     public void playMuzzleFlash()
     {
+        //Instantiate(muzzleFlash, muzzleFlash.Transform);
         muzzleFlash.Play();
     }
 

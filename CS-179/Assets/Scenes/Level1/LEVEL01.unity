@@ -216,7 +216,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CameraPosition: {fileID: 1898915756}
   mainCamera: {fileID: 0}
-  firstPerson: {fileID: 0}
 --- !u!1 &1898915755
 GameObject:
   m_ObjectHideFlags: 0
@@ -29605,16 +29604,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1542425112819508431, guid: c64dd883c20d61c4e8934c9c4c87bee4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1542425112971453720, guid: c64dd883c20d61c4e8934c9c4c87bee4,
-        type: 3}
-      propertyPath: m_TagString
-      value: MainCamera
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c64dd883c20d61c4e8934c9c4c87bee4, type: 3}

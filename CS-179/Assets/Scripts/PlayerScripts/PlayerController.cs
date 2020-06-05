@@ -493,6 +493,17 @@ public class PlayerController : Subject
 
         if (isCarrying == true)
         {
+            if (isColliding)
+            {
+                pickupDestination.transform.GetChild(0).transform.GetComponent<Rigidbody>().isKinematic = false;
+                pickupDestination.transform.GetChild(0).transform.transform.parent = null;
+                isCarrying = false;
+                reset = true;
+                disarmed = false;
+                isColliding = false;
+            }
+
+
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
             {
                 print("Gently place the chimken");
@@ -507,10 +518,25 @@ public class PlayerController : Subject
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "MOVEABLE_OBJECT" && isCarrying)
+        if (collision.gameObject.tag == "MOVEABLE_OBJECT" && isCarrying)
         {
-            Physics.IgnoreCollision(collision.gameObject.GetComponent<Collider>(), this.GetComponent<Collider>());
+            if (isCarrying == true)
+            {
+                print("Carrying something but Collision detected!");
+                isColliding = true;
+            }
+            //Physics.IgnoreCollision(collision.gameObject.GetComponent<Collider>(), this.GetComponent<Collider>());
         }
+    }
+
+    private void OnTriggerEnter()
+    {
+        if (isCarrying == true)
+        {
+            print("Carrying something but collider triggered something!");
+            isColliding = true;
+        }
+
     }
     #endregion
 }

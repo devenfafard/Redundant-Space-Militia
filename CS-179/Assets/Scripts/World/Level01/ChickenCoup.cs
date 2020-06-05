@@ -36,6 +36,9 @@ public class ChickenCoup : Subject
             chicken_1_Found = chicken_2_Found = chicken_3_Found = chicken_4_Found = chicken_5_Found = true;
             check_Chickens();
         }
+
+        Fix_Chickens();
+
     }
 
     private void OnTriggerEnter(Collider chicken)
@@ -79,5 +82,25 @@ public class ChickenCoup : Subject
     public bool get_Checkpoint_1_Status()
     {
         return checkpoint_complete;
+    }
+
+    private void Fix_Chickens()
+    {
+        if (checkpoint_complete == false)
+        {
+            if (chicken_1.transform.position.y < -10)
+                chicken_1.transform.position = chicken_1.transform.position + (Vector3.up * 15);
+            if (chicken_2.transform.position.y < -10)
+                chicken_2.transform.position = chicken_2.transform.position + (Vector3.up * 15);
+            if (chicken_3.transform.position.y < -10)
+                chicken_3.transform.position = chicken_3.transform.position + (Vector3.up * 15);
+            if (chicken_4.transform.position.y < -10)
+                chicken_4.transform.position = chicken_4.transform.position + (Vector3.up * 15);
+            if (chicken_5.transform.position.y < -10)
+                chicken_5.transform.position = chicken_5.transform.position + (Vector3.up * 15);
+
+
+
+        }
     }
 }
